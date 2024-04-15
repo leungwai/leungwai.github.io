@@ -1,0 +1,77 @@
+*{
+    font-family: "Helvetica Neue", "Inter", sans-serif
+}
+
+/* For main header bar */
+.main-header-bar {
+    z-index: 100;
+    position: fixed;
+    height: 5.625em; /*90px*/
+    width: 100%;
+    padding-left:0px;
+    padding-right: 0px; 
+    background-color: white;
+}
+
+.header-left {
+    height: 100%;
+}
+
+.header-left #leungwai-logo {
+    float: left;
+    height: 60px; 
+    margin-left: 20%;
+    margin-top: 15px;
+}
+
+.header-left #header-topic {
+    float: left;
+    margin-top: 32px; 
+    margin-left: 10px; 
+    text-align: center;
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+}
+
+.categories-center {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 32px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+.header-right {
+    height: 100%;
+}
+
+.categories-right {
+    float: right;
+    margin-right: 20%;
+    margin-top: 32px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+
+/* Main Body */
+.main-homepage {
+    /* Debugging */
+    border-style: solid;
+    border-width:2px;
+    border-color: red; 
+    
+    height: 100%;
+}
+
