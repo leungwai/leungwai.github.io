@@ -19,7 +19,7 @@
     height: 200px;
     width: 200px;
     float: right;
-    margin-right: 10px;
+    margin-right: 5px;
     box-shadow: 0px 10px 20px rgba(134,134,134,0.25);
     border-radius: 100px;
 }
@@ -28,7 +28,7 @@
     width: 100%;
     font-size: 30px; 
     font-weight: 300;
-    margin-left: 0px;
+    margin-left: 5px;
     margin-right: 0px;
     margin-bottom: -5px;
 }
@@ -37,7 +37,7 @@
     width: 100%;
     font-size: 45px; 
     font-weight: bold;
-    margin-left: 0px;
+    margin-left: 5px;
     margin-right: 0px;
     margin-top: -5px;
 }
