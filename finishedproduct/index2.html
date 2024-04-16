@@ -15,9 +15,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
+        <!-- FontAwesome Icons-->
+        <script src="https://kit.fontawesome.com/f068a6be3c.js" crossorigin="anonymous"></script>
+
+        <!-- Google Font Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
         <!-- CSS Stylesheet -->
         <link href="style2.css" type="text/css" rel="stylesheet" />
+
     </head>
+
     <body>
         <!-- Navigation Bar -->
         <div class="row main-header-bar">
@@ -53,12 +61,28 @@
                             <div class="row name-text">
                                 Leung Wai Liu
                             </div>
-                            <div class="row description-text">
-                                software developer, </br>
+                            <div class="row description-text-1">
+                                software developer,
+                            </div>
+                            <div class="row description-text-2">
                                 tech enthusiast.
                             </div>
                             <div class="row contact-links">
-                                contact ->
+                                <button class="social-media-button" type="button">
+                                    <i class="fa-brands fa-github"></i>
+                                </button>
+
+                                <button class="social-media-button" type="button">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </button>
+
+                                <button class="row align-items-center contact-small-button" type="button">
+                                    <p class="contact-text">contact</p>
+                                    <span class="contact-right-arrow material-symbols-outlined">
+                                        arrow_right_alt
+                                    </span>
+                                </button>
+
                             </div>
                        
                     </div>
@@ -96,20 +120,15 @@
 
         <!-- Bottom Bar -->
         <div class="row bottom-bar">
-            <div class="header-left col-3">
-                <input type="image" id="leungwai-logo" src="home/leungwailightlogo.png" alt="leungwai-logo">
-                <p id="header-topic">leungwai.</p>
+            <div class="bottom-left col-3">
+                <p class="bottom-name">© 2024 leungwai. v1</p>
             </div>
 
-            <div class="header-center col-6">
-                <a class="categories-center" href="#">home</a>
-                <a class="categories-center" href="#">about</a>
-                <a class="categories-center" href="#">experience</a>
-                <a class="categories-center" href="#">blog</a>
-            </div>
-
-            <div class="header-right col-3">
-                <a class="categories-right" href="#">contact</a>
+            <div class="bottom-right col-9">
+                <a class="bottom-options" href="#">future features</a>
+                <a class="bottom-options" href="#">dark/light</a>
+                <a class="bottom-options" href="#">語/lang</a>
+                <a class="bottom-options" href="#">credits</a>
             </div>
     </div>
 
