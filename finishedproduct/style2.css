@@ -660,6 +660,60 @@
     box-shadow: 0px 7px 7px rgba(134,134,134,0.3);
 }
 
+.experience-text-heading {
+    position: relative;
+    margin-left: calc(30% + 35px);
+    margin-top: -15%;
+    font-weight: bold;
+    font-size: 1.9vw;
+    
+}
+
+.experience-text-top {
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 25px;
+
+    font-size: 1.9vw; 
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.experience-bottom-portion {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+.experience-text-bottom {
+    justify-content: right;
+    text-align: right;
+    width: 100%;
+    margin-right: 5px;
+    margin-bottom: 25px;
+
+    font-size: 1.9vw;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.experience-learn-more-button {
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+
+    background: linear-gradient(150deg, #afdeff, #0094ff);
+    box-shadow: 0px 7px 7px rgba(134,134,134,0.3);
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
 .bottom-additionals {
     /* border-style: solid;
     border-width: 2px;
