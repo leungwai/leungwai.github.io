@@ -1,5 +1,9 @@
 *{
-    font-family: "Helvetica Neue", "Inter", sans-serif
+    font-family: "Helvetica Neue", "Inter", sans-serif;
+}
+
+body {
+    /* overflow-x: hidden; */
 }
 
 .main-header-bar {
@@ -10,11 +14,10 @@
     margin: 0px;
     padding-left:0px;
     padding-right: 0px; 
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
     animation: fade-in 3s; 
 }
-
 
 @keyframes fade-in {
     0% {
@@ -30,12 +33,14 @@
 
 .header-left {
     height: 100%;
+    overflow: visible;
+    white-space: nowrap;
 }
 
 .header-left #leungwai-logo {
     float: left;
     height: 6.67vh; 
-    margin-left: 20%;
+    margin-left: 6.67vh;
     margin-top: 1.67vh;
 }
 
@@ -70,7 +75,7 @@
 
 .categories-right {
     float: right;
-    margin-right: 20%;
+    margin-right: 6.67vh;
     margin-top: 3.56vh;
     font-size: 2.22vh;
     text-decoration: none;
@@ -78,6 +83,136 @@
     font-weight: bold;
 
 }
+
+.mobile-header-bar {
+    display: none; 
+}
+
+.categories-mobile {
+    /* border-color: red;
+    border-style: solid;
+    border-width: 2px; */
+    font-size: 2.22vh;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+    padding: 2.78vh 10%;
+}
+
+
+.mobile-bottom-stuff {
+    margin-top: auto;
+    display: column;
+    height: fit-content;
+}
+
+.mobile-bottom-options {
+    display: block;
+    font-size: 1.67vh;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 1.1vh 10%;
+}
+
+.mobile-bottom-name {
+    display: block;
+    text-align: left;
+    font-size: 1.67vh; 
+    font-weight:bold;
+    padding: 1.1vh 10%;
+}
+
+.mobile-bottom-name i {
+    font-weight: lighter;
+}
+
+.menu-button {
+    display: none;
+    float: right;
+    height: fit-content;
+
+    background: none;
+    border: none;
+
+    padding-top: 3.56vh;
+    padding-right: 6.67vh;
+    padding-left: 0;
+    padding-bottom: 0;
+
+    text-decoration: none;
+    font-size: 2.22vh;
+    
+    color: black;
+    font-weight: bold;
+    
+}
+
+@media (max-width: 575.98px) {
+    .header-left #leungwai-logo {
+        margin-left: 3.34vh; 
+    }
+
+    .header-left #header-topic {
+        display: none;
+    }
+
+    .menu-button {
+        padding-right: 3.34vh;
+    }
+
+}
+
+
+
+@media (max-width: 991.98px) {
+    .header-center{
+        display: none;
+    }
+    .categories-right {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .mobile-header-bar {
+        z-index: 1000;
+        display: flex;
+        position: fixed;
+        inset: 10vh 0 0 60vw;
+        flex-direction: column;
+        padding-top: 5vh; 
+        background-color: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(15px);
+  
+        /* Move it off the page when clicked */
+        transform: translateX(100%);
+        transition: transform 350ms ease-in;
+    }
+
+    .mobile-header-bar[data-visible="true"] {
+        transform: translateX(0%);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mobile-header-bar {
+        inset: 10vh 0 0 50vw;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mobile-header-bar {
+        inset: 10vh 0 0 30vw;
+    }
+}
+
+
+
+
 
 .content {
     /* Debugging */
@@ -386,6 +521,7 @@
     margin-bottom: 0.89vh;
     margin-left: 0px;
     margin-right: 0px;
+    padding-right: 2.78vh;
     font-size: 5vh; 
     font-weight: bold;
     line-height: 1.2;
@@ -1023,6 +1159,7 @@
     margin-bottom: -5px;
 
     box-shadow: 0px -7px 12px rgba(188, 188, 188, 0.5);
+    border-top: 1px solid rgba(152, 152, 152, 0.5);
 }
 
 @media (max-width: 575.98px) {
@@ -1046,7 +1183,7 @@
 
 
 
-/* For main header bar */
+/* For the bottom bar */
 .bottom-bar {
     /* border-style: solid;
     border-width: 2px;
@@ -1060,14 +1197,17 @@
     bottom: 0px; 
     padding-left:0px;
     padding-right: 0px; 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     animation: fade-in 3s;
+
+    transform: translateY(0%);
+    transition: transform 350ms ease-in;
 }
 
 .bottom-name {
     float: left;
-    margin-top: 0px;
+    /* margin-top: 0px; */
     margin-left: 2.22vh; 
     text-align: left;
     font-size: 1.67vh; 
@@ -1091,3 +1231,14 @@
     color: black;
     font-weight: bold;
 }
+
+@media (max-width: 991.98px) {
+    .bottom-right {
+        display: none;
+    }
+
+    .bottom-bar[data-visible="false"] {
+        transform: translateY(100%);
+    }
+}
+
