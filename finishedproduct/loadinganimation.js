@@ -56,6 +56,41 @@ let popInFromBottom =
 
 let screenWidth = screen.width;
 
+// Set all opacity to 0 first to prevent animation from running
+homePanel.opacity = 0; 
+aboutPanel.opacity = 0;
+experiencePanel.opacity = 0;
+blogPanel.opacity = 0;
+
+homeImageCarousel.opacity = 0;
+
+homeHelloText.opacity = 0;
+homeNameText.opacity = 0;
+homeDescriptionText.opacity = 0;
+homeContactLinks.opacity = 0;
+
+aboutTopPortion.opacity = 0;
+aboutTrainLine.opacity = 0;
+aboutBottomPortion.opacity = 0;
+
+experienceHeadingText.opacity = 0;
+experienceHeadingLogo.opacity = 0;
+experienceSlider.opacity = 0;
+experienceTopText.opacity = 0;
+experienceBottomPortion.opacity = 0;
+
+
+blogHeadingText.opacity = 0;
+blogHeadingLogo.opacity = 0;
+blogTopText.opacity = 0;
+blogBottomTextLight.opacity = 0;
+blogBottomTextBold.opacity = 0;
+blogLearnMoreButton.opacity = 0;
+blogExcerpt.opacity = 0;
+
+navBar.opacity = 0;
+statusBar.opacity = 0;
+
 // Adding support for fade-in-out transition 
 homePanel.classList.add("supports-hidden"); 
 aboutPanel.classList.add("supports-hidden");
