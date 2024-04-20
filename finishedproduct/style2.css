@@ -204,11 +204,11 @@
     position: absolute;
     width: 100%;
     height: fit-content;
-    margin: 0%;
+    margin: 0;
     padding-top: 10vh;
     padding-bottom: 3.33vh;
-    padding-left: 0.972vw;
-    padding-right: 0.972vw;
+    padding-left: 12px;
+    padding-right: 12px;
     
 }
 
