@@ -30,6 +30,13 @@
     font-weight: 300;
     margin-left: 5px;
     margin-right: 0px;
+}
+
+.coming-soon-link {
+    width: 100%;
+    font-size: 30px; 
+    margin-left: 5px;
+    margin-right: 0px;
     margin-bottom: -5px;
 }
 

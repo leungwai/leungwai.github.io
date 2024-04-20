@@ -27,6 +27,7 @@
 
         <!-- CSS Stylesheet -->
         <link href="style2.css" type="text/css" rel="stylesheet" />
+        <link href="animations2.css" type="text/css" rel="stylesheet" />
 
     </head>
 
@@ -40,7 +41,6 @@
                 <p id="header-topic">leungwai.</p>
             </div>
 
-
             <!-- Nav Categories -->
             <div class="header-center col-6">
                 <a class="categories-center" href="#">home</a>
@@ -52,10 +52,13 @@
             <!-- Nav Contact Options -->
             <div class="header-right col-6 col-sm-6 col-lg-3">
                 <a class="categories-right" href="#">contact</a>
+                <!-- Only appears when mobile navigation is needed -->
                 <button aria-controls="mobile-navigation" aria-expanded="false" class="menu-button">menu</button>
             </div>
         </div>
 
+
+        <!-- Mobile Header Bar -->
         <div data-visible="false" id="mobile-navigation" class="mobile-header-bar">
             <a class="categories-mobile" href="#">home</a>
             <a class="categories-mobile" href="#">about</a>
@@ -70,12 +73,12 @@
             </div>
         </div>
 
+
         <!-- Main Home Page -->
         <div class="row content">
 
             <!-- Home Panel  -->
             <div class="col-xl-6 home-panel">
-                
                 <div class="home-panel-box row justify-content-center ">
 
                     <!-- Home Panel - Logo Popup -->
@@ -88,7 +91,7 @@
                     </div>
 
                     <!-- Home Panel - Text -->
-                    <div class=" home-panel-text col-sm-6 col-xl-6 align-self-center">
+                    <div class=" home-panel-text col-sm-6 col-md-5 col-xl-6 align-self-center">
                          
                         <div class="row hello-text">
                             hello! i'm
@@ -100,6 +103,7 @@
                             software developer, </br> tech enthusiast.
                         </div>
                         
+                        <!-- Contact Links -->
                         <div class="row contact-links">
                             <button class="social-media-button" type="button">
                                 <i class="fa-brands fa-github fa-xl github-button"></i>
@@ -116,6 +120,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Additional Panels -->
             <div class="col-xl-6 additional-panels">
@@ -135,7 +140,7 @@
                                 <div class="top-circle"></div>
                             </div>
                             
-
+                            <!-- Train Line in About Panel -->
                             <div class="about-train-line">
                                 <div class="box-1">
                                     <div class="top-half-line"></div>
@@ -159,19 +164,19 @@
                         </div>
                     </div>
 
+
                     <!-- Experience Panel -->
                     <div class="col-sm-6 experience-panel">
 
                         <div class="d-flex flex-column experience-panel-box">
 
                             <img class="experience-heading-logo" src="home/experiencelogo.png" alt="Experience Heading Logo">
-
                             <div class="row experience-text-heading">
                                 experience
                             </div>
 
+                            <!-- Image Carousel -->
                             <div class="experience-slider">
-
                                 <div class="experience-slide-track">
                                     <img class="experience-logos" src="home/experiencelogos/prepforprepapplogo.png" />
                                     <img class="experience-logos" src="home/experiencelogos/washuapplogo.png" />
@@ -192,10 +197,6 @@
                                     <img class="experience-logos" src="home/experiencelogos/flashprizmapplogo.png" />
                                 </div>
                             </div>
-
-                           
-
-
 
                             <div class="row experience-text-top">
                                 many </br> projects,
@@ -223,6 +224,7 @@
                         
                         <div class="row justify-content-center blog-panel-box-contents">
                             
+                            <!-- Blog Panel - Left Half-->
                             <div class="d-flex flex-column col-sm-6 col-md-6 col-lg-5 col-xl-6 blog-excerpt">
                 
                                 <div class="blog-page">
@@ -236,16 +238,13 @@
                                         getting my hands on the Sandstone Black 64GB OnePlus One, these are some of my thoughts after 2 weeks of use. 
                                     </p>
                                 </div>
-
-                                <div class="mt-auto blog-popup-shadow">
-
-                                </div>
+                                <div class="mt-auto blog-popup-shadow"></div>
                             </div>
                             
-                            <div class="d-flex flex-column col-sm-5 col-md-6 col-lg-5 col-xl-6 blog-left-side">
+                            <!-- Blog Panel - Right Half -->
+                            <div class="d-flex flex-column col-sm-5 col-md-6 col-lg-5 col-xl-6 blog-right-side">
                                 
                                 <img class="blog-heading-logo" src="home/blogicon.png" alt="Blog Heading Logo">
-                                
                                 <div class="blog-heading-text">blog</div>
                                 
                                 <div class="blog-content-text-top">
@@ -253,7 +252,6 @@
                                 </div>
 
                                 <div class="mt-auto blog-bottom-portion">
-
                                     <div class="blog-text-bottom-first-line">
                                         you name it,
                                     </div>
@@ -266,21 +264,15 @@
                                     </button>
                                 </div>
                             </div>
-
-                            
-
                         </div>
-
-                        
-
                     </div>
-                    
                 </div>
-            </div>
+
+            </div>   
         </div>
 
 
-        <!-- Bottom Bar -->
+        <!-- Bottom Status Bar -->
         <div data-visible="true" class="row bottom-bar">
             <div class="bottom-left col-6">
                 <p class="bottom-name">© 2024 leungwai. <i>preview</i></p>
@@ -292,16 +284,9 @@
                 <a class="bottom-options" href="#">語/lang</a> -->
                 <a class="bottom-options" href="#">credits</a>
             </div>
-    </div>
-
-          
-
-
-
         </div>
-        
 
+ 
     </body>
 </html>
-
 

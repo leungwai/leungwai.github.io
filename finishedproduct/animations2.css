@@ -1,0 +1,205 @@
+/* All Panels - Gradient Background Animation */
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Initial Panel Slide-In */
+/* For Home Panel: */
+@keyframes fade-from-left {
+    0% {
+        opacity: 0%;
+        transform: translateX(-300px) scale(0.9);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateX(0px) scale(1);
+    }
+}
+
+/* For About Panel: */
+@keyframes fade-from-top {
+    0% {
+        opacity: 0%;
+        transform: translateY(-300px) scale(0.9);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* For Experience Panel: */
+@keyframes fade-from-right {
+    0% {
+        opacity: 0%;
+        transform: translateX(300px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+}
+
+/* For Blog Panel */
+@keyframes fade-from-bottom {
+    0% {
+        opacity: 0%;
+        transform: translateY(300px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+
+/* Navigation Bar and Bottom Bar Fade In*/
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+/* Home Panel */
+@keyframes slide-up {
+    0% {
+        transform: translateY(40%);
+    }
+    50% {
+        transform: translateY(40%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-40%);
+    }
+    50% {
+        transform: translateY(-40%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes slide-down-hover {
+    0% {
+        transform: translateY(0%);
+    }
+    5% {
+        transform: translateY(40%);
+    }
+    100% {
+        transform: translateY(40%);
+    }
+}
+
+@keyframes slide-up-hover {
+    0% {
+        transform: translateY(0%);
+    }
+    5% {
+        transform: translateY(-40%);
+    }
+    100% {
+        transform: translateY(-40%);
+    }
+}
+
+/* Home Panel - Text Animation */
+@keyframes name-text-animate {
+    0% {
+        opacity: 0%;
+    } 50% {
+        opacity: 0%;
+    } 100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes home-text-animate {
+    0% {
+        opacity: 0%;
+    } 85% {
+        opacity: 0%;
+    } 100% {
+        opacity: 100%;
+    }
+}
+
+
+/* About Panel */
+@keyframes appear-text-top {
+    0%{
+        opacity: 0%; 
+    }
+    50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes appear-text-middle {
+    0% {
+        opacity: 0%;
+    }
+    85% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes appear-text-bottom {
+    0% {
+        opacity: 0%;
+    }
+    87.5% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+/* Experience Panel */
+
+/* Experience Panel - Image Carousel */
+@keyframes logo-slide {
+    from {
+        transform: translateX(0%);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Blog Panel */
+
+
+
