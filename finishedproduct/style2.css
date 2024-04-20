@@ -18,7 +18,7 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
-    animation: fade-in 3s; 
+    /* animation: fade-in 3s;  */
     overflow-y: hidden;
 }
 
@@ -231,8 +231,11 @@ body {
     margin: 0px;
     height: 86.66vh;
     padding: 10px;
+    opacity: 1;
+}
 
-    animation: fade-from-left 1.5s;
+.fade-from-left {
+    animation: fade-from-left;
 }
 
 .home-panel-box {
@@ -277,18 +280,18 @@ body {
 }
 
 .carousel-container:hover .profile-picture {
-    animation: slide-down-hover 20s ease-in-out;
+    animation: slide-down-hover 0.5s ease-in-out;
 }
 .carousel-container:hover .profile-logo {
-    animation: slide-up-hover 20s ease-in-out;
+    animation: slide-up-hover 0.5s ease-in-out;
 }
 
-.carousel-container:not(:hover) .profile-picture {
-    animation: slide-up 3s ease-in-out;
+/* .carousel-container:not(:hover) .profile-picture {
+    animation: slide-up 0.5s ease-in-out;
 }
 .carousel-container:not(:hover) .profile-logo {
-    animation: slide-down 3s ease-in-out;
-}
+    animation: slide-down 0.5s ease-in-out;
+} */
 
 @media (max-width: 575.98px) {
    
@@ -335,24 +338,21 @@ body {
 
 
     .carousel-container:hover .profile-picture {
-        animation: slide-right-hover 20s ease-in-out;
+        animation: slide-right-hover 0.5s ease-in-out;
     }
     .carousel-container:hover .profile-logo {
-        animation: slide-left-hover 20s ease-in-out;
+        animation: slide-left-hover 0.5s ease-in-out;
     }
 
-    .carousel-container:not(:hover) .profile-picture {
-        animation: slide-left 3s ease-in-out;
+    /* .carousel-container:not(:hover) .profile-picture {
+        animation: slide-left 0.5s ease-in-out;
     }
     .carousel-container:not(:hover) .profile-logo {
-        animation: slide-right 3s ease-in-out;
-    }
+        animation: slide-right 0.5s ease-in-out;
+    } */
 
     @keyframes slide-left {
         0% {
-            transform: translateX(45%);
-        }
-        50% {
             transform: translateX(45%);
         }
         100% {
@@ -363,9 +363,6 @@ body {
 
     @keyframes slide-right {
         0% {
-            transform: translateX(-45%);
-        }
-        50% {
             transform: translateX(-45%);
         }
         100% {
@@ -379,9 +376,6 @@ body {
         0% {
             transform: translateX(0%);
         }
-        5% {
-            transform: translateX(45%);
-        }
         100% {
             transform: translateX(45%);
         }
@@ -390,9 +384,6 @@ body {
     @keyframes slide-left-hover {
         0% {
             transform: translateX(0%);
-        }
-        5% {
-            transform: translateX(-45%);
         }
         100% {
             transform: translateX(-45%);
@@ -516,7 +507,7 @@ body {
 .about-panel{
     height: 43.33vh;
     padding: 10px;
-    animation: fade-from-top 1.5s;
+    /* animation: fade-from-top 1.5s; */
 }
 
 .about-panel-box {
@@ -655,7 +646,7 @@ body {
 .experience-panel{
     height: 43.33vh;
     padding: 10px;
-    animation: fade-from-right 1.5s;
+    /* animation: fade-from-right 1.5s; */
 }
 
 .experience-panel-box {
@@ -765,7 +756,7 @@ body {
     height: 43.33vh;
     margin: 0px;
     padding: 10px;
-    animation: fade-from-bottom 1.5s;
+    /* animation: fade-from-bottom 1.5s; */
 }
 
 .blog-panel-box {
@@ -795,7 +786,6 @@ body {
 .blog-excerpt {
     padding-top: 4.44vh;
     padding-left: 2.78vh;
-    padding-bottom: 0vh;
     padding-right: 0vh;
     height: 100%;
 }
@@ -803,7 +793,7 @@ body {
 .blog-page{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 150%;
 
     margin-left: auto;
     margin-right: auto;
@@ -816,7 +806,6 @@ body {
     padding-right: 2.78vh;
     padding-top: 2.78vh;
     padding-bottom: 0px;
-
     overflow: hidden;
 }
 
@@ -969,7 +958,7 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(15px);
-    animation: fade-in 3s;
+    /* animation: fade-in 3s; */
 
     transform: translateY(0%);
     transition: transform 350ms ease-in;
