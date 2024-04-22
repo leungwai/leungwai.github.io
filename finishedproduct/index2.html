@@ -28,13 +28,40 @@
         <link href="style2.css" type="text/css" rel="stylesheet" />
         <link href="animations2.css" type="text/css" rel="stylesheet" />
 
-        
-
-        
-
     </head>
 
     <body>
+        <!-- Initial Welcome Screen -->
+        <div id="initial-welcome-screen" class="initial-welcome-screen">
+            
+            <div id="initial-welcome-screen-container" class="container-fluid initial-welcome-screen-container">
+                
+                <div id="intial-welcome-welcome-text" class="initial-welcome-welcome-text">
+                    welcome to &nbsp;
+                </div>
+                
+                <div id="intial-welcome-name-text" class="initial-welcome-name-text">
+                    leungwai. <i>preview</i> &nbsp;
+                </div>
+                
+                <div id="initial-welcome-enjoy-text" class="initial-welcome-enjoy-text">
+                    enjoy.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Initial Page Load Animation Bar -->
+        <div id="initial-page-load-status" class="row initial-page-load-status-bar">
+            <div class="col-8 initial-load-status-left-side">
+                <p id="initial-header-topic" class="initial-header-topic">loading...</p>
+            </div>
+            <div class="col-4 intiial-load-status-right-side">
+                <button id="skip-animation-button" class="skip-animation-button">skip</button>
+            </div>
+        </div>
+
+
         <!-- Navigation Bar -->
         <div id="nav-bar" class="row main-header-bar">
 
@@ -126,10 +153,10 @@
 
 
                 <!-- Additional Panels -->
-                <div class="col-xl-6 additional-panels">
+                <div id="additional-panels" class="col-xl-6 additional-panels">
 
                     <!-- Top Half -->
-                    <div class="row top-additionals">
+                    <div id="top-additionals" class="row top-additionals">
 
                         <!-- About Panel -->
                         <div id="about-panel" class="col-sm-6 about-panel">

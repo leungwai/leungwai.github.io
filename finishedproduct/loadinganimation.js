@@ -1,8 +1,17 @@
+// Initial Page Load Status Bar
+let initialPageLoadStatus = document.getElementById("initial-page-load-status");
+let skipAnimationButton = document.getElementById("skip-animation-button");
+let initialWelcomeScreen = document.getElementById("initial-welcome-screen");
+
 // Panels 
 let homePanel = document.getElementById("home-panel");
 let aboutPanel = document.getElementById("about-panel");
 let experiencePanel = document.getElementById("experience-panel");
 let blogPanel = document.getElementById("blog-panel");
+
+// Additional Panels 
+let additionalPanels = document.getElementById("additional-panels");
+let topAdditionals = document.getElementById("top-additionals");
 
 // Home Panel
 let homeImageCarousel = document.getElementById("home-image-carousel");
@@ -39,24 +48,14 @@ let blogExcerpt = document.getElementById("blog-excerpt");
 let navBar = document.getElementById("nav-bar");
 let statusBar = document.getElementById("status-bar");
 
-// Movements 
 
-let popInFromBottom = 
-[
-    {
-        transform: "translateY(400px)",
-    }, 
-    {
-        transform: "translateY(-10px)",
-    },
-    {
-        transform: "translateY(0px)",
-    }
-]
+let screenWidth = window.innerWidth;
 
-let screenWidth = screen.width;
 
 // Set all opacity to 0 first to prevent animation from running
+initialPageLoadStatus.opacity = 0;
+initialWelcomeScreen.opacity = 0;
+
 homePanel.opacity = 0; 
 aboutPanel.opacity = 0;
 experiencePanel.opacity = 0;
@@ -91,42 +90,11 @@ blogExcerpt.opacity = 0;
 navBar.opacity = 0;
 statusBar.opacity = 0;
 
-// Adding support for fade-in-out transition 
-homePanel.classList.add("supports-hidden"); 
-aboutPanel.classList.add("supports-hidden");
-experiencePanel.classList.add("supports-hidden");
-blogPanel.classList.add("supports-hidden");
-
-homeImageCarousel.classList.add("supports-hidden");
-
-homeHelloText.classList.add("supports-hidden");
-homeNameText.classList.add("supports-hidden");
-homeDescriptionText.classList.add("supports-hidden");
-homeContactLinks.classList.add("supports-hidden");
-
-aboutTopPortion.classList.add("supports-hidden");
-aboutTrainLine.classList.add("supports-hidden");
-aboutBottomPortion.classList.add("supports-hidden");
-
-experienceHeadingText.classList.add("supports-hidden");
-experienceHeadingLogo.classList.add("supports-hidden");
-experienceSlider.classList.add("supports-hidden");
-experienceTopText.classList.add("supports-hidden");
-experienceBottomPortion.classList.add("supports-hidden");
-
-
-blogHeadingText.classList.add("supports-hidden");
-blogHeadingLogo.classList.add("supports-hidden");
-blogTopText.classList.add("supports-hidden");
-blogBottomTextLight.classList.add("supports-hidden");
-blogBottomTextBold.classList.add("supports-hidden");
-blogLearnMoreButton.classList.add("supports-hidden");
-blogExcerpt.classList.add("supports-hidden");
-
-navBar.classList.add("supports-hidden");
-statusBar.classList.add("supports-hidden");
 
 //toggling it to hidden first 
+initialPageLoadStatus.classList.toggle("hidden");
+initialWelcomeScreen.classList.toggle("hidden");
+
 homePanel.classList.toggle("hidden"); 
 aboutPanel.classList.toggle("hidden");
 experiencePanel.classList.toggle("hidden");
@@ -159,69 +127,768 @@ blogLearnMoreButton.classList.toggle("hidden");
 navBar.classList.toggle("hidden");
 statusBar.classList.toggle("hidden");
 
-homeImageProfile.classList.toggle("home-pre-slide-up");
-homeImageLogo.classList.toggle("home-pre-slide-down");
+if (screenWidth < 576) {
+    homeImageProfile.classList.toggle("home-pre-slide-left");
+    homeImageLogo.classList.toggle("home-pre-slide-right");
+} else {
+    homeImageProfile.classList.toggle("home-pre-slide-up");
+    homeImageLogo.classList.toggle("home-pre-slide-down");
+}
+
 blogExcerpt.classList.toggle("pre-pop-up-slide");
 
-if (screenWidth >= 992) {
-    
+setTimeout(() => { 
+    // Adding support for fade-in-out transition 
+    initialPageLoadStatus.classList.add("supports-hidden");
+    initialWelcomeScreen.classList.add("supports-hidden");
+
+    homePanel.classList.add("supports-hidden"); 
+    aboutPanel.classList.add("supports-hidden");
+    experiencePanel.classList.add("supports-hidden");
+    blogPanel.classList.add("supports-hidden");
+
+    homeImageCarousel.classList.add("supports-hidden");
+
+    homeHelloText.classList.add("supports-hidden");
+    homeNameText.classList.add("supports-hidden");
+    homeDescriptionText.classList.add("supports-hidden");
+    homeContactLinks.classList.add("supports-hidden");
+
+    aboutTopPortion.classList.add("supports-hidden");
+    aboutTrainLine.classList.add("supports-hidden");
+    aboutBottomPortion.classList.add("supports-hidden");
+
+    experienceHeadingText.classList.add("supports-hidden");
+    experienceHeadingLogo.classList.add("supports-hidden");
+    experienceSlider.classList.add("supports-hidden");
+    experienceTopText.classList.add("supports-hidden");
+    experienceBottomPortion.classList.add("supports-hidden");
+
+
+    blogHeadingText.classList.add("supports-hidden");
+    blogHeadingLogo.classList.add("supports-hidden");
+    blogTopText.classList.add("supports-hidden");
+    blogBottomTextLight.classList.add("supports-hidden");
+    blogBottomTextBold.classList.add("supports-hidden");
+    blogLearnMoreButton.classList.add("supports-hidden");
+    blogExcerpt.classList.add("supports-hidden");
+
+    initialPageLoadStatus.classList.add("supports-hidden");
+    navBar.classList.add("supports-hidden");
+}, 300);
+
+
+// Code
+if (screenWidth >= 1200) {
     // Slide the 4 main panels into screen frist
-    homePanel.classList.toggle("fade-from-left");
-    aboutPanel.classList.toggle("fade-from-top");
-    experiencePanel.classList.toggle("fade-from-right");
-    blogPanel.classList.toggle("fade-from-bottom");
-    homePanel.classList.toggle("hidden");
-    aboutPanel.classList.toggle("hidden");
-    experiencePanel.classList.toggle("hidden");
-    blogPanel.classList.toggle("hidden");
+    homePanelTimeoutIDOne = setTimeout(() => { homePanel.classList.toggle("fade-from-left")}, 0);
+    aboutPanelTimeoutIDOne = setTimeout(() => { aboutPanel.classList.toggle("fade-from-top")}, 0);
+    experiencePanelTimeoutIDOne = setTimeout(() => { experiencePanel.classList.toggle("fade-from-right")}, 0); 
+    blogPanelTimeoutIDOne = setTimeout(() => { blogPanel.classList.toggle("fade-from-bottom")}, 0); 
+    
+    homePanelTimeoutIDTwo = setTimeout(() => { homePanel.classList.toggle("hidden")}, 0);
+    aboutPanelTimeoutIDTwo = setTimeout(() => { aboutPanel.classList.toggle("hidden")}, 0);
+    experiencePanelTimeoutIDTwo = setTimeout(() => { experiencePanel.classList.toggle("hidden")}, 0);
+    blogPanelTimeoutIDTwo = setTimeout(() => {blogPanel.classList.toggle("hidden")}, 0);
+
+    // Fade In Loading Screen
+    initialPageLoadStatusTimeoutIDOne = setTimeout(() => { initialPageLoadStatus.classList.toggle("hidden")}, 1500);
 
     // Home Panel Items
-    setTimeout(() => { homeImageCarousel.classList.toggle("hidden")}, 1500);
-    setTimeout(() => { homeHelloText.classList.toggle("hidden")}, 1500);
+    homeImageCarouselTimeoutID = setTimeout(() => { homeImageCarousel.classList.toggle("hidden")}, 1500);
+    homeHelloTextTimeoutID = setTimeout(() => { homeHelloText.classList.toggle("hidden")}, 1500);
 
-    setTimeout(() => { homeImageProfile.classList.toggle("slide-up")}, 2000);
-    setTimeout(() => { homeImageProfile.classList.toggle("home-pre-slide-up")}, 2000);
+    homeImageProfileTimeoutIDOne = setTimeout(() => { homeImageProfile.classList.toggle("slide-up")}, 2000);
+    homeImageProfileTimeoutIDTwo = setTimeout(() => { homeImageProfile.classList.toggle("home-pre-slide-up")}, 2000);
 
-    setTimeout(() => { homeImageLogo.classList.toggle("slide-down")}, 2000);
-    setTimeout(() => { homeImageLogo.classList.toggle("home-pre-slide-down")}, 2000);
+    homeImageLogoTimeoutIDOne = setTimeout(() => { homeImageLogo.classList.toggle("slide-down")}, 2000);
+    homeImageLogoTimeoutIDTwo = setTimeout(() => { homeImageLogo.classList.toggle("home-pre-slide-down")}, 2000);
 
-    setTimeout(() => { homeNameText.classList.toggle("hidden")}, 2000);
+    homeNameTextTimeoutID = setTimeout(() => { homeNameText.classList.toggle("hidden")}, 2000);
 
-    setTimeout(() => { homeDescriptionText.classList.toggle("hidden")}, 2500);
-    setTimeout(() => { homeContactLinks.classList.toggle("hidden")}, 2500);
+    homeDescriptionTextTimeoutID = setTimeout(() => { homeDescriptionText.classList.toggle("hidden")}, 2500);
+    homeContactLinksTimeoutID = setTimeout(() => { homeContactLinks.classList.toggle("hidden")}, 2500);
 
     // About Panel Items
-    setTimeout(() => { aboutTopPortion.classList.toggle("hidden")}, 3000);
-    setTimeout(() => { aboutTrainLine.classList.toggle("hidden")}, 3500);
-    setTimeout(() => { aboutBottomPortion.classList.toggle("hidden")}, 4000);
+    aboutTopPortionTimeoutID = setTimeout(() => { aboutTopPortion.classList.toggle("hidden")}, 3000);
+    aboutTrainLineTimeoutID = setTimeout(() => { aboutTrainLine.classList.toggle("hidden")}, 3500);
+    aboutBottomPortionTimeoutID = setTimeout(() => { aboutBottomPortion.classList.toggle("hidden")}, 4000);
 
     // Experience Panel Items
-    setTimeout(() => { experienceHeadingLogo.classList.toggle("hidden")}, 4500);
-    setTimeout(() => { experienceHeadingText.classList.toggle("hidden")}, 4500);
+    experienceHeadingLogoTimeoutID = setTimeout(() => { experienceHeadingLogo.classList.toggle("hidden")}, 4500);
+    experienceHeadingTextTimeoutID = setTimeout(() => { experienceHeadingText.classList.toggle("hidden")}, 4500);
 
-    setTimeout(() => { experienceTopText.classList.toggle("hidden")}, 5000);
+    experienceTopTextTimeoutID = setTimeout(() => { experienceTopText.classList.toggle("hidden")}, 5000);
 
-    setTimeout(() => { experienceSlider.classList.toggle("hidden")}, 5500);
-    setTimeout(() => { experienceBottomPortion.classList.toggle("hidden")}, 5500);
+    experienceSliderTimeoutID = setTimeout(() => { experienceSlider.classList.toggle("hidden")}, 5500);
+    experienceBottomPortionTimeoutID = setTimeout(() => { experienceBottomPortion.classList.toggle("hidden")}, 5500);
 
     // Blog Panel
-    setTimeout(() => { blogHeadingLogo.classList.toggle("hidden")}, 6000);
-    setTimeout(() => { blogHeadingText.classList.toggle("hidden")}, 6000);
+    blogHeadingLogoTimeoutID = setTimeout(() => { blogHeadingLogo.classList.toggle("hidden")}, 6000);
+    blogHeadingTextTimeoutID = setTimeout(() => { blogHeadingText.classList.toggle("hidden")}, 6000);
 
-    setTimeout(() => { blogTopText.classList.toggle("hidden")}, 6500);
+    blogTopTextTimeoutID = setTimeout(() => { blogTopText.classList.toggle("hidden")}, 6500);
 
-    setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, 7000);
+    blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, 7000);
 
-    setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, 7500);
-    setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, 7500);
-    setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, 7500);
+    blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, 7500);
+    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, 7500);
+    blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, 7500);
     
-    setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, 8000);
+    blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, 8000);
 
-    setTimeout(() => { navBar.classList.toggle("hidden")}, 8500);
-    setTimeout(() => { statusBar.classList.toggle("hidden")}, 8500);
+    // Fade out Initial Status Bar
+    initialPageLoadStatusTimeoutIDTwo =  setTimeout(() => { initialPageLoadStatus.classList.toggle("hidden")}, 8500);
+    initialPageLoadStatusTimeoutIDThree = setTimeout(() => { initialPageLoadStatus.classList.toggle("display-none")}, 9000);
+
+    // Fade In Initial Welcome Screen
+    initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, 9000);
+
+    // Fade Out Intiial Welcome Screen 
+    initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, 9500);
+    initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, 10000);
+
+    // Fade in Nav Bar
+    navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, 10000);
+    statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, 10000);
+
+} else if (screenWidth >= 576 && screenWidth < 1200) {
+    // set the other panels to none first
+    additionalPanelsDisplayNoneTimeoutIDOne = setTimeout(() => { additionalPanels.classList.toggle("display-none")}, 0);
+    aboutPanelDisplayNoneTimeoutIDOne = setTimeout(() => { aboutPanel.classList.toggle("display-none")}, 0);
+    experiencePanelDisplayNoneTimeoutIDOne = setTimeout(() => { experiencePanel.classList.toggle("display-none")}, 0);
+    blogPanelDisplayNoneTimeoutIDOne = setTimeout(() => { blogPanel.classList.toggle("display-none")}, 0);
+
+    // Slide the 4 main panels into screen frist
+    homePanelTimeoutIDOne = setTimeout(() => { homePanel.classList.toggle("fade-from-left")}, 0);
+    homePanelTimeoutIDTwo = setTimeout(() => { homePanel.classList.toggle("hidden")}, 0);
+    
+    // Fade In Loading Screen
+    initialPageLoadStatusTimeoutIDOne = setTimeout(() => { initialPageLoadStatus.classList.toggle("hidden")}, 1500);
+
+    // Home Panel Items
+    homeImageCarouselTimeoutID = setTimeout(() => { homeImageCarousel.classList.toggle("hidden")}, 1500);
+    homeHelloTextTimeoutID = setTimeout(() => { homeHelloText.classList.toggle("hidden")}, 1500);
+
+    homeImageProfileTimeoutIDOne = setTimeout(() => { homeImageProfile.classList.toggle("slide-up")}, 2000);
+    homeImageProfileTimeoutIDTwo = setTimeout(() => { homeImageProfile.classList.toggle("home-pre-slide-up")}, 2000);
+
+    homeImageLogoTimeoutIDOne = setTimeout(() => { homeImageLogo.classList.toggle("slide-down")}, 2000);
+    homeImageLogoTimeoutIDTwo = setTimeout(() => { homeImageLogo.classList.toggle("home-pre-slide-down")}, 2000);
+
+    homeNameTextTimeoutID = setTimeout(() => { homeNameText.classList.toggle("hidden")}, 2000);
+
+    homeDescriptionTextTimeoutID = setTimeout(() => { homeDescriptionText.classList.toggle("hidden")}, 2500);
+    homeContactLinksTimeoutID = setTimeout(() => { homeContactLinks.classList.toggle("hidden")}, 2500);
+
+    // Fade Out About Panel, Fade In the Rest
+    homePanelTimeoutIDThree = setTimeout(() => { homePanel.classList.toggle("unfade-from-left")}, 3000);
+    homePanelTimeoutIDFour = setTimeout(() => { homePanel.classList.toggle("hidden")}, 3000);
+    homePanelDisplayNoneTimeoutIDOne = setTimeout(() => { homePanel.classList.toggle("display-none")}, 4000);
+
+    additionalPanelsDisplayNoneTimeoutIDTwo = setTimeout(() => { additionalPanels.classList.toggle("display-none")}, 4000);
+    aboutPanelDisplayNoneTimeoutIDTwo = setTimeout(() => { aboutPanel.classList.toggle("display-none")}, 4000);
+    experiencePanelDisplayNoneTimeoutIDTwo = setTimeout(() => { experiencePanel.classList.toggle("display-none")}, 4000);
+    blogPanelDisplayNoneTimeoutIDTwo = setTimeout(() => { blogPanel.classList.toggle("display-none")}, 4000);
+    
+
+    aboutPanelTimeoutIDOne = setTimeout(() => { aboutPanel.classList.toggle("fade-from-left")}, 4000);
+    experiencePanelTimeoutIDOne = setTimeout(() => { experiencePanel.classList.toggle("fade-from-right")}, 4000); 
+    blogPanelTimeoutIDOne = setTimeout(() => { blogPanel.classList.toggle("fade-from-bottom")}, 4000); 
+    
+    aboutPanelTimeoutIDTwo = setTimeout(() => { aboutPanel.classList.toggle("hidden")}, 4500);
+    experiencePanelTimeoutIDTwo = setTimeout(() => { experiencePanel.classList.toggle("hidden")}, 4500);
+    blogPanelTimeoutIDTwo = setTimeout(() => {blogPanel.classList.toggle("hidden")}, 4500);
+    
+
+    // About Panel Items
+    aboutTopPortionTimeoutID = setTimeout(() => { aboutTopPortion.classList.toggle("hidden")}, 5000);
+    aboutTrainLineTimeoutID = setTimeout(() => { aboutTrainLine.classList.toggle("hidden")}, 5500);
+    aboutBottomPortionTimeoutID = setTimeout(() => { aboutBottomPortion.classList.toggle("hidden")}, 6000);
+
+    // Experience Panel Items
+    experienceHeadingLogoTimeoutID = setTimeout(() => { experienceHeadingLogo.classList.toggle("hidden")}, 6500);
+    experienceHeadingTextTimeoutID = setTimeout(() => { experienceHeadingText.classList.toggle("hidden")}, 6500);
+
+    experienceTopTextTimeoutID = setTimeout(() => { experienceTopText.classList.toggle("hidden")}, 7000);
+
+    experienceSliderTimeoutID = setTimeout(() => { experienceSlider.classList.toggle("hidden")}, 7500);
+    experienceBottomPortionTimeoutID = setTimeout(() => { experienceBottomPortion.classList.toggle("hidden")}, 7500);
+
+    // Blog Panel
+    blogHeadingLogoTimeoutID = setTimeout(() => { blogHeadingLogo.classList.toggle("hidden")}, 8000);
+    blogHeadingTextTimeoutID = setTimeout(() => { blogHeadingText.classList.toggle("hidden")}, 8000);
+
+    blogTopTextTimeoutID = setTimeout(() => { blogTopText.classList.toggle("hidden")}, 8500);
+
+    blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, 9000);
+
+    blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, 9500);
+    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, 9500);
+    blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, 9500);
+    
+    blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, 10000);
+
+    // Unfade About, Experience and Blog Panels 
+    aboutPanelTimeoutIDThree = setTimeout(() => { aboutPanel.classList.toggle("unfade-from-left")}, 10500);
+    experiencePanelTimeoutIDThree = setTimeout(() => { experiencePanel.classList.toggle("unfade-from-right")}, 10500); 
+    blogPanelTimeoutIDThree = setTimeout(() => { blogPanel.classList.toggle("unfade-from-bottom")}, 10500); 
+
+    additionalPanelsDisplayNoneTimeoutIDThree = setTimeout(() => { additionalPanels.classList.toggle("display-none")}, 11500);
+    aboutPanelDisplayNoneTimeoutIDThree = setTimeout(() => { aboutPanel.classList.toggle("display-none")}, 11500);
+    experiencePanelDisplayNoneTimeoutIDThree = setTimeout(() => { experiencePanel.classList.toggle("display-none")}, 11500);
+    blogPanelDisplayNoneTimeoutIDThree = setTimeout(() => { blogPanel.classList.toggle("display-none")}, 11500);
+    
+    
+    aboutPanelTimeoutIDFour = setTimeout(() => { aboutPanel.classList.toggle("hidden")}, 11500);
+    experiencePanelTimeoutIDFour = setTimeout(() => { experiencePanel.classList.toggle("hidden")}, 11500);
+    blogPanelTimeoutIDFour = setTimeout(() => {blogPanel.classList.toggle("hidden")}, 11500);
+
+    makeEverythingAppearTimeout = setTimeout(() => {makeEverythingAppear()}, 11500);
+
+} else if (screenWidth < 576) {
+
+    // set the other panels to none first
+    additionalPanelsDisplayNoneTimeoutIDOne = setTimeout(() => { additionalPanels.classList.toggle("display-none")}, 0);
+    aboutPanelDisplayNoneTimeoutIDOne = setTimeout(() => { aboutPanel.classList.toggle("display-none")}, 0);
+    experiencePanelDisplayNoneTimeoutIDOne = setTimeout(() => { experiencePanel.classList.toggle("display-none")}, 0);
+    blogPanelDisplayNoneTimeoutIDOne = setTimeout(() => { blogPanel.classList.toggle("display-none")}, 0);
+
+    // Slide the 4 main panels into screen frist
+    homePanelTimeoutIDOne = setTimeout(() => { homePanel.classList.toggle("fade-from-left")}, 0);
+    homePanelTimeoutIDTwo = setTimeout(() => { homePanel.classList.toggle("hidden")}, 0);
+    
+    // Fade In Loading Screen
+    initialPageLoadStatusTimeoutIDOne = setTimeout(() => { initialPageLoadStatus.classList.toggle("hidden")}, 1500);
+
+    // Home Panel Items
+    homeImageCarouselTimeoutID = setTimeout(() => { homeImageCarousel.classList.toggle("hidden")}, 1500);
+    homeHelloTextTimeoutID = setTimeout(() => { homeHelloText.classList.toggle("hidden")}, 1500);
+
+    homeImageProfileTimeoutIDOne = setTimeout(() => { homeImageProfile.classList.toggle("slide-left")}, 2000);
+    homeImageProfileTimeoutIDTwo = setTimeout(() => { homeImageProfile.classList.toggle("home-pre-slide-left")}, 2000);
+
+    homeImageLogoTimeoutIDOne = setTimeout(() => { homeImageLogo.classList.toggle("slide-right")}, 2000);
+    homeImageLogoTimeoutIDTwo = setTimeout(() => { homeImageLogo.classList.toggle("home-pre-slide-right")}, 2000);
+
+    homeNameTextTimeoutID = setTimeout(() => { homeNameText.classList.toggle("hidden")}, 2000);
+
+    homeDescriptionTextTimeoutID = setTimeout(() => { homeDescriptionText.classList.toggle("hidden")}, 2500);
+    homeContactLinksTimeoutID = setTimeout(() => { homeContactLinks.classList.toggle("hidden")}, 2500);
+
+    // Fade Out About Panel, Fade In the Blog and Experience Panels ONLY
+    homePanelTimeoutIDThree = setTimeout(() => { homePanel.classList.toggle("unfade-from-left")}, 3000);
+    homePanelTimeoutIDFour = setTimeout(() => { homePanel.classList.toggle("hidden")}, 3000);
+    homePanelDisplayNoneTimeoutIDOne = setTimeout(() => { homePanel.classList.toggle("display-none")}, 4000);
+
+    additionalPanelsDisplayNoneTimeoutIDTwo = setTimeout(() => { additionalPanels.classList.toggle("display-none")}, 4000);
+    aboutPanelDisplayNoneTimeoutIDTwo = setTimeout(() => { aboutPanel.classList.toggle("display-none")}, 4000);
+    experiencePanelDisplayNoneTimeoutIDTwo = setTimeout(() => { experiencePanel.classList.toggle("display-none")}, 4000);
+    
+
+    aboutPanelTimeoutIDOne = setTimeout(() => { aboutPanel.classList.toggle("fade-from-left")}, 4000);
+    experiencePanelTimeoutIDOne = setTimeout(() => { experiencePanel.classList.toggle("fade-from-right")}, 4000); 
+    
+    
+    aboutPanelTimeoutIDTwo = setTimeout(() => { aboutPanel.classList.toggle("hidden")}, 4500);
+    experiencePanelTimeoutIDTwo = setTimeout(() => { experiencePanel.classList.toggle("hidden")}, 4500);
+    
+
+    // About Panel Items
+    aboutTopPortionTimeoutID = setTimeout(() => { aboutTopPortion.classList.toggle("hidden")}, 5000);
+    aboutTrainLineTimeoutID = setTimeout(() => { aboutTrainLine.classList.toggle("hidden")}, 5500);
+    aboutBottomPortionTimeoutID = setTimeout(() => { aboutBottomPortion.classList.toggle("hidden")}, 6000);
+
+    // Experience Panel Items
+    experienceHeadingLogoTimeoutID = setTimeout(() => { experienceHeadingLogo.classList.toggle("hidden")}, 6500);
+    experienceHeadingTextTimeoutID = setTimeout(() => { experienceHeadingText.classList.toggle("hidden")}, 6500);
+
+    experienceTopTextTimeoutID = setTimeout(() => { experienceTopText.classList.toggle("hidden")}, 7000);
+
+    experienceSliderTimeoutID = setTimeout(() => { experienceSlider.classList.toggle("hidden")}, 7500);
+    experienceBottomPortionTimeoutID = setTimeout(() => { experienceBottomPortion.classList.toggle("hidden")}, 7500);
+
+    // Unfade About, Experience Panels, Show Blog Panel
+    aboutPanelTimeoutIDThree = setTimeout(() => { aboutPanel.classList.toggle("unfade-from-left")}, 8000);
+    experiencePanelTimeoutIDThree = setTimeout(() => { experiencePanel.classList.toggle("unfade-from-right")}, 8000); 
+
+    aboutPanelTimeoutIDFour = setTimeout(() => { aboutPanel.classList.toggle("hidden")}, 9000);
+    experiencePanelTimeoutIDFour = setTimeout(() => { experiencePanel.classList.toggle("hidden")}, 9000);
+
+    aboutPanelDisplayNoneTimeoutIDThree = setTimeout(() => { aboutPanel.classList.toggle("display-none")}, 9000);
+    experiencePanelDisplayNoneTimeoutIDThree = setTimeout(() => { experiencePanel.classList.toggle("display-none")}, 9000);
+
+    topAdditionalsDisplayNoneTimeoutIDOne = setTimeout(() => { topAdditionals.classList.toggle("display-none")}, 9000);
+
+    blogPanelDisplayNoneTimeoutIDTwo = setTimeout(() => { blogPanel.classList.toggle("display-none")}, 9000);
+    
+    blogPanelTimeoutIDOne = setTimeout(() => { blogPanel.classList.toggle("fade-from-bottom")}, 9000); 
+    blogPanelTimeoutIDTwo = setTimeout(() => {blogPanel.classList.toggle("hidden")}, 10500);
+
+    // Blog Panel
+    blogHeadingLogoTimeoutID = setTimeout(() => { blogHeadingLogo.classList.toggle("hidden")}, 10500);
+    blogHeadingTextTimeoutID = setTimeout(() => { blogHeadingText.classList.toggle("hidden")}, 10500);
+
+    blogTopTextTimeoutID = setTimeout(() => { blogTopText.classList.toggle("hidden")}, 11000);
+
+    blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, 11500);
+
+    blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, 12000);
+    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, 12000);
+    blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, 12000);
+    
+    blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, 12500);
+
+    // Unfade Blog Panels 
+    blogPanelTimeoutIDThree = setTimeout(() => { blogPanel.classList.toggle("unfade-from-bottom")}, 13000); 
+
+    additionalPanelsDisplayNoneTimeoutIDThree = setTimeout(() => { additionalPanels.classList.toggle("display-none")}, 14000);
+    blogPanelDisplayNoneTimeoutIDThree = setTimeout(() => { blogPanel.classList.toggle("display-none")}, 14000);
+    
+    blogPanelTimeoutIDFour = setTimeout(() => {blogPanel.classList.toggle("hidden")}, 14000);
+
+    makeEverythingAppearTimeout = setTimeout(() => {makeEverythingAppear()}, 14000);
 
 }
+
+
+function makeEverythingAppear() {
+
+    // Cancel sliding the 4 main panels into screen first
+    clearTimeout(homePanelTimeoutIDOne);
+    clearTimeout(aboutPanelTimeoutIDOne);
+    clearTimeout(experiencePanelTimeoutIDOne);
+    clearTimeout(blogPanelTimeoutIDOne);
+
+    clearTimeout(homePanelTimeoutIDTwo);
+    clearTimeout(aboutPanelTimeoutIDTwo);
+    clearTimeout(experiencePanelTimeoutIDTwo);
+    clearTimeout(blogPanelTimeoutIDTwo);
+
+    if (screenWidth < 1200) {
+        clearTimeout(homePanelTimeoutIDThree);
+        clearTimeout(aboutPanelTimeoutIDThree);
+        clearTimeout(experiencePanelTimeoutIDThree);
+        clearTimeout(blogPanelTimeoutIDThree);
+        
+        clearTimeout(homePanelTimeoutIDFour);
+        clearTimeout(aboutPanelTimeoutIDFour);
+        clearTimeout(experiencePanelTimeoutIDFour);
+        clearTimeout(blogPanelTimeoutIDFour);
+
+        clearTimeout(homePanelDisplayNoneTimeoutIDOne);
+        clearTimeout(aboutPanelDisplayNoneTimeoutIDOne);
+        clearTimeout(experiencePanelDisplayNoneTimeoutIDOne);
+        clearTimeout(blogPanelDisplayNoneTimeoutIDOne);
+        clearTimeout(additionalPanelsDisplayNoneTimeoutIDOne);
+
+        clearTimeout(aboutPanelDisplayNoneTimeoutIDTwo);
+        clearTimeout(experiencePanelDisplayNoneTimeoutIDTwo);
+        clearTimeout(blogPanelDisplayNoneTimeoutIDTwo);
+        clearTimeout(additionalPanelsDisplayNoneTimeoutIDTwo);
+
+        clearTimeout(aboutPanelDisplayNoneTimeoutIDThree);
+        clearTimeout(experiencePanelDisplayNoneTimeoutIDThree);
+        clearTimeout(blogPanelDisplayNoneTimeoutIDThree);
+        clearTimeout(additionalPanelsDisplayNoneTimeoutIDThree);
+    }
+
+    if (screenWidth < 576) {
+        clearTimeout(topAdditionalsDisplayNoneTimeoutIDOne);
+    }
+
+
+    // Intial Page Load Status
+    clearTimeout(initialPageLoadStatusTimeoutIDOne);
+
+    if (screenWidth >= 1200) {
+        clearTimeout(initialPageLoadStatusTimeoutIDTwo); 
+        clearTimeout(initialPageLoadStatusTimeoutIDThree); 
+    }
+
+    // Home Panel Items
+    clearTimeout(homeImageCarouselTimeoutID);
+    clearTimeout(homeHelloTextTimeoutID);
+    
+    clearTimeout(homeImageProfileTimeoutIDOne);
+    clearTimeout(homeImageProfileTimeoutIDTwo);
+    
+    clearTimeout(homeImageLogoTimeoutIDOne);
+    clearTimeout(homeImageLogoTimeoutIDTwo);
+
+    clearTimeout(homeNameTextTimeoutID);
+
+    clearTimeout(homeDescriptionTextTimeoutID);
+    clearTimeout(homeContactLinksTimeoutID);
+
+    // About Panel Items
+    clearTimeout(aboutTopPortionTimeoutID);
+    clearTimeout(aboutTrainLineTimeoutID);
+    clearTimeout(aboutBottomPortionTimeoutID);
+
+    // Experience Panel Items
+    clearTimeout(experienceHeadingLogoTimeoutID);
+    clearTimeout(experienceHeadingTextTimeoutID);
+
+    clearTimeout(experienceTopTextTimeoutID);
+
+    clearTimeout(experienceSliderTimeoutID);
+    clearTimeout(experienceBottomPortionTimeoutID);
+
+    // Blog Panel Items 
+    clearTimeout(blogHeadingLogoTimeoutID);
+    clearTimeout(blogHeadingTextTimeoutID);
+
+    clearTimeout(blogTopTextTimeoutID);
+    
+    clearTimeout(blogBottomTextLightTimeoutID);
+
+    clearTimeout(blogExcerptTimeoutIDOne);
+    clearTimeout(blogExcerptTImeoutIDTwo);
+    clearTimeout(blogBottomTextBoldTimeoutID);
+
+    clearTimeout(blogLearnMoreButtonTimeoutID);
+
+    if (screenWidth >= 1200) {
+        // Cancel Welcome Animation
+        clearTimeout(initialWelcomeScreenTimeoutIDOne);
+        clearTimeout(initialWelcomeScreenTimeoutIDTwo);
+        clearTimeout(initialWelcomeScreenTimeoutIDThree);
+
+        // cancel fade in nav bar
+        clearTimeout(navBarTimeoutID);
+        clearTimeout(statusBarTimeoutID);
+    }
+
+
+    // Ensure that Everything is not display none
+    if (homePanel.classList.contains("display-none")) {
+        homePanel.classList.toggle("display-none");
+    }
+
+    if (additionalPanels.classList.contains("display-none")) {
+        additionalPanels.classList.toggle("display-none");
+    }
+
+    if (topAdditionals.classList.contains("display-none")) {
+        topAdditionals.classList.toggle("display-none");
+    }
+
+    if (aboutPanel.classList.contains("display-none")) {
+        aboutPanel.classList.toggle("display-none");
+    }
+
+    if (experiencePanel.classList.contains("display-none")) {
+        experiencePanel.classList.toggle("display-none");
+    }
+
+    if (blogPanel.classList.contains("display-none")) {
+        blogPanel.classList.toggle("display-none");
+    }
+
+
+    // Fade All Animations That Appeared On Screen Already 
+    if (!homePanel.classList.contains("hidden")) {
+        homePanel.classList.toggle("hidden");
+    }
+
+    if (!aboutPanel.classList.contains("hidden")) {
+        aboutPanel.classList.toggle("hidden");
+    }
+
+    if (!experiencePanel.classList.contains("hidden")) {
+        experiencePanel.classList.toggle("hidden");
+    }
+
+    if (!blogPanel.classList.contains("hidden")) {
+        blogPanel.classList.toggle("hidden");
+    }
+
+
+    // Make sure that they do not have the fading animation
+    if (homePanel.classList.contains("fade-from-left")) {
+        homePanel.classList.toggle("fade-from-left");
+    }
+
+    if (aboutPanel.classList.contains("fade-from-left")) {
+        aboutPanel.classList.toggle("fade-from-left");
+    }
+
+    if (aboutPanel.classList.contains("fade-from-top")) {
+        aboutPanel.classList.toggle("fade-from-top");
+    }
+
+    if (experiencePanel.classList.contains("fade-from-right")) {
+        experiencePanel.classList.toggle("fade-from-right");
+    }
+
+    if (blogPanel.classList.contains("fade-from-bottom")) {
+        blogPanel.classList.toggle("fade-from-bottom");
+    }
+
+
+    // Make sure that they do not have the unfading animation
+    if (homePanel.classList.contains("unfade-from-left")) {
+        homePanel.classList.toggle("unfade-from-left");
+    }
+
+    if (aboutPanel.classList.contains("unfade-from-left")) {
+        aboutPanel.classList.toggle("unfade-from-left");
+    }
+
+    if (aboutPanel.classList.contains("unfade-from-top")) {
+        aboutPanel.classList.toggle("unfade-from-top");
+    }
+
+    if (experiencePanel.classList.contains("unfade-from-right")) {
+        experiencePanel.classList.toggle("unfade-from-right");
+    }
+
+    if (blogPanel.classList.contains("unfade-from-bottom")) {
+        blogPanel.classList.toggle("unfade-from-bottom");
+    }
+
+
+    // Home Panel
+    if (!homeImageCarousel.classList.contains("hidden")) {
+        homeImageCarousel.classList.toggle("hidden");
+    }
+
+    if (screenWidth < 576) {
+        if (!homeImageProfile.classList.contains("home-pre-slide-left")) {
+            homeImageProfile.classList.toggle("home-pre-slide-left");
+        }
+    
+        if (homeImageProfile.classList.contains("slide-left")) {
+            homeImageProfile.classList.toggle("slide-left");
+        }
+
+        if (!homeImageLogo.classList.contains("home-pre-slide-right")) {
+            homeImageLogo.classList.toggle("home-pre-slide-right");
+        }
+    
+        if (homeImageLogo.classList.contains("slide-right")) {
+            homeImageLogo.classList.toggle("slide-right");
+        }
+    } else {
+        if (!homeImageProfile.classList.contains("home-pre-slide-up")) {
+            homeImageProfile.classList.toggle("home-pre-slide-up");
+        }
+    
+        if (homeImageProfile.classList.contains("slide-up")) {
+            homeImageProfile.classList.toggle("slide-up");
+        }
+
+        if (!homeImageLogo.classList.contains("home-pre-slide-down")) {
+            homeImageLogo.classList.toggle("home-pre-slide-down");
+        }
+    
+        if (homeImageLogo.classList.contains("slide-down")) {
+            homeImageLogo.classList.toggle("slide-down");
+        }
+    }
+
+    if (!homeHelloText.classList.contains("hidden")) {
+        homeHelloText.classList.toggle("hidden");
+    }
+
+    if (!homeNameText.classList.contains("hidden")) {
+        homeNameText.classList.toggle("hidden");
+    }
+
+    if (!homeDescriptionText.classList.contains("hidden")) {
+        homeDescriptionText.classList.toggle("hidden");
+    }
+
+    if (!homeContactLinks.classList.contains("hidden")) {
+        homeContactLinks.classList.toggle("hidden");
+    }
+
+
+    // About Panel
+    if (!aboutTopPortion.classList.contains("hidden")) {
+        aboutTopPortion.classList.toggle("hidden");
+    }
+
+    if (!aboutTrainLine.classList.contains("hidden")) {
+        aboutTrainLine.classList.toggle("hidden");
+    }
+
+    if (!aboutBottomPortion.classList.contains("hidden")) {
+        aboutBottomPortion.classList.toggle("hidden");
+    }
+
+
+    // Experience Panel
+    if (!experienceHeadingText.classList.contains("hidden")) {
+        experienceHeadingText.classList.toggle("hidden");
+    }
+
+    if (!experienceHeadingLogo.classList.contains("hidden")) {
+        experienceHeadingLogo.classList.toggle("hidden");
+    }
+
+    if (!experienceSlider.classList.contains("hidden")) {
+        experienceSlider.classList.toggle("hidden");
+    }
+
+    if (!experienceTopText.classList.contains("hidden")) {
+        experienceTopText.classList.toggle("hidden");
+    }
+
+    if (!experienceBottomPortion.classList.contains("hidden")) {
+        experienceBottomPortion.classList.toggle("hidden");
+    }
+    
+
+    // Blog Panel
+    if (!blogHeadingText.classList.contains("hidden")) {
+        blogHeadingText.classList.toggle("hidden");
+    }
+
+    if (!blogHeadingLogo.classList.contains("hidden")) {
+        blogHeadingLogo.classList.toggle("hidden");
+    }
+
+    if (!blogTopText.classList.contains("hidden")) {
+        blogTopText.classList.toggle("hidden");
+    }
+
+    if (!blogBottomTextLight.classList.contains("hidden")) {
+        blogBottomTextLight.classList.toggle("hidden");
+    }
+
+    if (!blogBottomTextBold.classList.contains("hidden")) {
+        blogBottomTextBold.classList.toggle("hidden");
+    }
+
+    if (!blogExcerpt.classList.contains("pre-pop-up-slide")) {
+        blogExcerpt.classList.toggle("pre-pop-up-slide");
+    }
+
+    if (blogExcerpt.classList.contains("pop-up-slide")) {
+        blogExcerpt.classList.toggle("pop-up-slide");
+    }
+
+    if (!blogLearnMoreButton.classList.contains("hidden")) {
+        blogLearnMoreButton.classList.toggle("hidden");
+    }
+
+
+    // Initial Welcome Screen
+    if (!initialWelcomeScreen.classList.contains("hidden")) {
+        initialWelcomeScreen.classList.toggle("hidden");
+    }
+
+    if (initialWelcomeScreen.classList.contains("display-none")) {
+        initialWelcomeScreen.classList.toggle("display-none");
+    }
+
+
+    // Nav Bar and Status Bar
+    if (!navBar.classList.contains("hidden")) {
+        navBar.classList.toggle("hidden");
+    }
+
+    if (!statusBar.classList.contains("hidden")) {
+        statusBar.classList.toggle("hidden");
+    }
+
+    // FOR SMALLER SCREEN WIDTH: INTRODUCE WELCOME SCREEN FIRST
+
+    let initialTime = 0;
+
+    if (screenWidth < 1200) {
+        setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, 0);
+        setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, 1500);
+        setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, 2000);
+        initialTime = 2000;
+    }
+
+    // Making Everything Appear Again
+    initialPageLoadStatus.classList.toggle("hidden");
+    setTimeout(() => { initialPageLoadStatus.classList.toggle("display-none")}, initialTime);
+
+    // Fading everything back in at once
+    homePanelTimeoutIDTwo = setTimeout(() => { homePanel.classList.toggle("hidden")}, initialTime);
+    aboutPanelTimeoutIDTwo = setTimeout(() => { aboutPanel.classList.toggle("hidden")}, initialTime);
+    experiencePanelTimeoutIDTwo = setTimeout(() => { experiencePanel.classList.toggle("hidden")}, initialTime);
+    blogPanelTimeoutIDTwo = setTimeout(() => {blogPanel.classList.toggle("hidden")}, initialTime);
+
+    // Home Panel Items
+    homeImageCarouselTimeoutID = setTimeout(() => { homeImageCarousel.classList.toggle("hidden")}, initialTime);
+    homeHelloTextTimeoutID = setTimeout(() => { homeHelloText.classList.toggle("hidden")}, initialTime);
+
+    if (screenWidth < 576) {
+        homeImageProfileTimeoutIDOne = setTimeout(() => { homeImageProfile.classList.toggle("slide-left")}, initialTime + 500);
+        homeImageProfileTimeoutIDTwo = setTimeout(() => { homeImageProfile.classList.toggle("home-pre-slide-left")}, initialTime + 1000);
+
+        homeImageLogoTimeoutIDOne = setTimeout(() => { homeImageLogo.classList.toggle("slide-right")}, initialTime + 500);
+        homeImageLogoTimeoutIDTwo = setTimeout(() => { homeImageLogo.classList.toggle("home-pre-slide-right")}, initialTime + 1000);
+    } else {
+        homeImageProfileTimeoutIDOne = setTimeout(() => { homeImageProfile.classList.toggle("slide-up")}, initialTime + 500);
+        homeImageProfileTimeoutIDTwo = setTimeout(() => { homeImageProfile.classList.toggle("home-pre-slide-up")}, initialTime + 1000);
+
+        homeImageLogoTimeoutIDOne = setTimeout(() => { homeImageLogo.classList.toggle("slide-down")}, initialTime + 500);
+        homeImageLogoTimeoutIDTwo = setTimeout(() => { homeImageLogo.classList.toggle("home-pre-slide-down")}, initialTime + 1000);
+    }
+    
+
+    homeNameTextTimeoutID = setTimeout(() => { homeNameText.classList.toggle("hidden")}, initialTime);
+
+    homeDescriptionTextTimeoutID = setTimeout(() => { homeDescriptionText.classList.toggle("hidden")}, initialTime);
+    homeContactLinksTimeoutID = setTimeout(() => { homeContactLinks.classList.toggle("hidden")}, initialTime);
+
+    // About Panel Items
+    aboutTopPortionTimeoutID = setTimeout(() => { aboutTopPortion.classList.toggle("hidden")}, initialTime);
+    aboutTrainLineTimeoutID = setTimeout(() => { aboutTrainLine.classList.toggle("hidden")}, initialTime);
+    aboutBottomPortionTimeoutID = setTimeout(() => { aboutBottomPortion.classList.toggle("hidden")}, initialTime);
+
+    // Experience Panel Items
+    experienceHeadingLogoTimeoutID = setTimeout(() => { experienceHeadingLogo.classList.toggle("hidden")}, initialTime);
+    experienceHeadingTextTimeoutID = setTimeout(() => { experienceHeadingText.classList.toggle("hidden")}, initialTime);
+
+    experienceTopTextTimeoutID = setTimeout(() => { experienceTopText.classList.toggle("hidden")}, initialTime);
+
+    experienceSliderTimeoutID = setTimeout(() => { experienceSlider.classList.toggle("hidden")}, initialTime);
+    experienceBottomPortionTimeoutID = setTimeout(() => { experienceBottomPortion.classList.toggle("hidden")}, initialTime);
+
+    // Blog Panel
+    blogHeadingLogoTimeoutID = setTimeout(() => { blogHeadingLogo.classList.toggle("hidden")}, initialTime);
+    blogHeadingTextTimeoutID = setTimeout(() => { blogHeadingText.classList.toggle("hidden")}, initialTime);
+
+    blogTopTextTimeoutID = setTimeout(() => { blogTopText.classList.toggle("hidden")}, initialTime);
+
+    blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, initialTime);
+
+    blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, initialTime + 500);
+    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, 2000);
+    blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, initialTime);
+    
+    blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, initialTime);
+
+    if (screenWidth > 1200) {
+        // Fade In Initial Welcome Screen
+        initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, initialTime);
+        // Fade Out Intiial Welcome Screen 
+        initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, initialTime + 1000);
+        initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, initialTime + 1500);
+
+        // Fade in Nav Bar
+        navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, initialTime + 1500);
+        statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, initialTime + 1500);
+    } else {
+         // Fade in Nav Bar
+         navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, initialTime);
+         statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, initialTime);
+    }
+    
+}
+
+
+skipAnimationButton.addEventListener('click', () => {
+    makeEverythingAppear();
+});
 
 
 
