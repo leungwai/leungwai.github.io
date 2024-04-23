@@ -178,8 +178,8 @@ setTimeout(() => {
 }, 300);
 
 
-let shortAnimation = 500;
-let midAnimation = 1000;
+let shortAnimation = 700;
+let midAnimation = 1200;
 let longAnimation = 1500; 
 let wait = 0;
 
@@ -236,28 +236,28 @@ if (screenWidth >= 1200) {
 
     blogTopTextTimeoutID = setTimeout(() => { blogTopText.classList.toggle("hidden")}, (shortAnimation * 10) + (midAnimation * 0) + (longAnimation * 1) + (wait * 11));
 
-    blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, 7000);
+    blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, (shortAnimation * 11) + (midAnimation * 0) + (longAnimation * 1) + (wait * 12));
 
-    blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, (shortAnimation * 11) + (midAnimation * 0) + (longAnimation * 1) + (wait * 12));
-    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, (shortAnimation * 11) + (midAnimation * 0) + (longAnimation * 1) + (wait * 12));
-    blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, (shortAnimation * 11) + (midAnimation * 0) + (longAnimation * 1) + (wait * 12));
+    blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, (shortAnimation * 12) + (midAnimation * 0) + (longAnimation * 1) + (wait * 13));
+    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, (shortAnimation * 12) + (midAnimation * 0) + (longAnimation * 1) + (wait * 13));
+    blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, (shortAnimation * 12) + (midAnimation * 0) + (longAnimation * 1) + (wait * 13));
     
-    blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, (shortAnimation * 12) + (midAnimation * 0) + (longAnimation * 1) + (wait * 13));
+    blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, (shortAnimation * 13) + (midAnimation * 0) + (longAnimation * 1) + (wait * 14));
 
     // Fade out Initial Status Bar
-    initialPageLoadStatusTimeoutIDTwo =  setTimeout(() => { initialPageLoadStatus.classList.toggle("hidden")}, (shortAnimation * 13) + (midAnimation * 0) + (longAnimation * 1) + (wait * 14));
-    initialPageLoadStatusTimeoutIDThree = setTimeout(() => { initialPageLoadStatus.classList.toggle("display-none")}, (shortAnimation * 14) + (midAnimation * 0) + (longAnimation * 1) + (wait * 15));
+    initialPageLoadStatusTimeoutIDTwo =  setTimeout(() => { initialPageLoadStatus.classList.toggle("hidden")}, (shortAnimation * 14) + (midAnimation * 0) + (longAnimation * 1) + (wait * 15));
+    initialPageLoadStatusTimeoutIDThree = setTimeout(() => { initialPageLoadStatus.classList.toggle("display-none")}, (shortAnimation * 15) + (midAnimation * 0) + (longAnimation * 1) + (wait * 16));
 
     // Fade In Initial Welcome Screen
-    initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 14) + (midAnimation * 0) + (longAnimation * 1) + (wait * 15));
+    initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 16) + (midAnimation * 0) + (longAnimation * 1) + (wait * 17));
 
     // Fade Out Intiial Welcome Screen 
-    initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 15) + (midAnimation * 0) + (longAnimation * 1) + (wait * 16));
-    initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, (shortAnimation * 16) + (midAnimation * 0) + (longAnimation * 1) + (wait * 17));
+    initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 17) + (midAnimation * 0) + (longAnimation * 1) + (wait * 18));
+    initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, (shortAnimation * 18) + (midAnimation * 0) + (longAnimation * 1) + (wait * 19));
 
     // Fade in Nav Bar
-    navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, (shortAnimation * 17) + (midAnimation * 0) + (longAnimation * 1) + (wait * 18));
-    statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, (shortAnimation * 17) + (midAnimation * 0) + (longAnimation * 1) + (wait * 18));
+    navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, (shortAnimation * 19) + (midAnimation * 0) + (longAnimation * 1) + (wait * 20));
+    statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, (shortAnimation * 19) + (midAnimation * 0) + (longAnimation * 1) + (wait * 20));
 
 } else if (screenWidth >= 576 && screenWidth < 1200) {
     // set the other panels to none first

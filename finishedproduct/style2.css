@@ -212,10 +212,6 @@ body {
     opacity: 1;
 }
 
-.fade-from-left {
-    animation: fade-from-left;
-}
-
 .home-panel-box {
     margin: 0px;
     height: 100%;
@@ -355,7 +351,6 @@ body {
     font-size: 5vh; 
     font-weight: bold;
     line-height: 1.2;
-    animation: name-text-animate 3s;
 }
 
 .description-text {
@@ -364,7 +359,6 @@ body {
     font-size: 2.78vh; 
     font-weight: 300;
     line-height: 1.2;
-    animation: home-text-animate 3.5s;
 }
 
 .contact-links {
@@ -373,8 +367,6 @@ body {
     margin-top: 0.89vh;
     width: 100%;
     height: 5.56vh;
-    
-    animation: home-text-animate 3.5s;
 }
 
 .social-media-button {
@@ -446,7 +438,6 @@ body {
 .about-panel{
     height: 43.33vh;
     padding: 10px;
-    /* animation: fade-from-top 1.5s; */
 }
 
 .about-panel-box {
@@ -476,7 +467,6 @@ body {
     font-size: 2.78vh; 
     font-weight: 300;
     line-height: 1.2;
-    animation: appear-text-top 3s;
 }
 
 .top-circle {
@@ -486,7 +476,6 @@ body {
     border-style: solid;
     background-color: white;
     border-width: 0.56vh;
-    animation: appear-text-top 3s;
 }
 
 .about-train-line {
@@ -496,7 +485,6 @@ body {
     
     height: calc(100% - 10vh - 15.22vh);
     width: 100%;
-    animation: appear-text-middle 3.5s; 
 }
 
 .box-1 {
@@ -535,16 +523,11 @@ body {
     border-width: 1.67vh 1.67vh 0px 0px;
 }
 
-.about-bottom-items {
-    animation: appear-text-bottom 4s;
-}
-
 .bottom-circle {
     margin-left: auto;
     width: 3.33vh;
     height: 3.33vh;
     border-radius: 1.67vh; 
-    /* margin-top: -3.11vh; */
     border-style: solid;
     background-color: white;
     border-width: 0.56vh;
@@ -559,8 +542,6 @@ body {
     font-size: 2.78vh; 
     font-weight: bold;
     line-height: 1.2;
-    animation: appear 1s;
-    animation-delay: 3s;
 }
 
 
@@ -585,7 +566,6 @@ body {
 .experience-panel{
     height: 43.33vh;
     padding: 10px;
-    /* animation: fade-from-right 1.5s; */
 }
 
 .experience-panel-box {
@@ -599,7 +579,6 @@ body {
     background: linear-gradient(135deg, #fff6f3, #ff9d7d);
     background-size: 300%;
     animation: color 5s ease-in-out infinite; 
-
 }
 
 /* Experience Panel - Heading */
@@ -695,7 +674,6 @@ body {
     height: 43.33vh;
     margin: 0px;
     padding: 10px;
-    /* animation: fade-from-bottom 1.5s; */
 }
 
 .blog-panel-box {
@@ -898,7 +876,6 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(15px);
-    /* animation: fade-in 3s; */
 
     transform: translateY(0%);
     transition: transform 350ms ease-in;
