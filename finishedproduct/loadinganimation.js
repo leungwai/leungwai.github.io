@@ -249,15 +249,15 @@ if (screenWidth >= 1200) {
     initialPageLoadStatusTimeoutIDThree = setTimeout(() => { initialPageLoadStatus.classList.toggle("display-none")}, (shortAnimation * 15) + (midAnimation * 0) + (longAnimation * 1) + (wait * 16));
 
     // Fade In Initial Welcome Screen
-    initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 16) + (midAnimation * 0) + (longAnimation * 1) + (wait * 17));
+    initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 15) + (midAnimation * 0) + (longAnimation * 1) + (wait * 16));
 
     // Fade Out Intiial Welcome Screen 
-    initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 17) + (midAnimation * 0) + (longAnimation * 1) + (wait * 18));
-    initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, (shortAnimation * 18) + (midAnimation * 0) + (longAnimation * 1) + (wait * 19));
+    initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, (shortAnimation * 15) + (midAnimation * 0) + (longAnimation * 2) + (wait * 17));
+    initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, (shortAnimation * 16) + (midAnimation * 0) + (longAnimation * 2) + (wait * 18));
 
     // Fade in Nav Bar
-    navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, (shortAnimation * 19) + (midAnimation * 0) + (longAnimation * 1) + (wait * 20));
-    statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, (shortAnimation * 19) + (midAnimation * 0) + (longAnimation * 1) + (wait * 20));
+    navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, (shortAnimation * 16) + (midAnimation * 0) + (longAnimation * 2) + (wait * 18));
+    statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, (shortAnimation * 16) + (midAnimation * 0) + (longAnimation * 2) + (wait * 18));
 
 } else if (screenWidth >= 576 && screenWidth < 1200) {
     // set the other panels to none first
@@ -872,7 +872,7 @@ function makeEverythingAppear() {
     blogBottomTextLightTimeoutID = setTimeout(() => { blogBottomTextLight.classList.toggle("hidden")}, initialTime);
 
     blogExcerptTimeoutIDOne = setTimeout(() => { blogExcerpt.classList.toggle("pop-up-slide")}, initialTime + shortAnimation + wait);
-    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, initialTime + shortAnimation + longAnimation + wait * 2);
+    blogExcerptTImeoutIDTwo = setTimeout(() => { blogExcerpt.classList.toggle("pre-pop-up-slide")}, initialTime + shortAnimation + midAnimation + wait * 2);
     blogBottomTextBoldTimeoutID = setTimeout(() => { blogBottomTextBold.classList.toggle("hidden")}, initialTime);
     
     blogLearnMoreButtonTimeoutID = setTimeout(() => { blogLearnMoreButton.classList.toggle("hidden")}, initialTime);
@@ -881,12 +881,12 @@ function makeEverythingAppear() {
         // Fade In Initial Welcome Screen
         initialWelcomeScreenTimeoutIDOne = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, initialTime);
         // Fade Out Intiial Welcome Screen 
-        initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, initialTime + wait);
-        initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, initialTime + wait + shortAnimation);
+        initialWelcomeScreenTimeoutIDTwo = setTimeout(() => { initialWelcomeScreen.classList.toggle("hidden")}, initialTime + (shortAnimation * 0) + (longAnimation * 1) + (wait * 1));
+        initialWelcomeScreenTimeoutIDThree = setTimeout(() => { initialWelcomeScreen.classList.toggle("display-none")}, initialTime + (shortAnimation * 1) + (longAnimation * 1) + (wait * 2));
 
         // Fade in Nav Bar
-        navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, initialTime + initialTime + wait + shortAnimation);
-        statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, initialTime + initialTime + wait + shortAnimation);
+        navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, initialTime + (shortAnimation * 1) + (longAnimation * 1) + (wait * 2));
+        statusBarTimeoutID = setTimeout(() => { statusBar.classList.toggle("hidden")}, initialTime + (shortAnimation * 1) + (longAnimation * 1) + (wait * 2));
     } else {
          // Fade in Nav Bar
          navBarTimeoutID = setTimeout(() => { navBar.classList.toggle("hidden")}, initialTime);
