@@ -1,4 +1,10 @@
 /* All Panels - Gradient Background Animation */
+:root {
+    --short-time: 0.5s;
+    --mid-time: 1.0s;
+    --long-time: 1.5s;
+}
+
 @keyframes color {
     0% {
         background-position: 0% 50%;
@@ -16,7 +22,7 @@
 }
 
 .supports-hidden {
-    transition: opacity 0.5s;
+    transition: opacity var(--short-time);
 }
 
 .display-none {
@@ -40,7 +46,7 @@
 }
 
 .fade-from-left {
-    animation: fade-from-left 1.5s;
+    animation: fade-from-left var(--long-time);
 }
 
 /* For About Panel: */
@@ -56,7 +62,7 @@
 }
 
 .fade-from-top {
-    animation: fade-from-top 1.5s;
+    animation: fade-from-top var(--long-time);
 }
 
 
@@ -73,7 +79,7 @@
 }
 
 .fade-from-right {
-    animation: fade-from-right 1.5s;
+    animation: fade-from-right var(--long-time);
 }
 
 /* For Blog Panel */
@@ -89,7 +95,7 @@
 }
 
 .fade-from-bottom {
-    animation: fade-from-bottom 1.5s;
+    animation: fade-from-bottom var(--long-time);
 }
 
 
@@ -106,7 +112,7 @@
 }
 
 .unfade-from-left {
-    animation: unfade-from-left 1s;
+    animation: unfade-from-left var(--mid-time);
 }
 
 /* For About Panel: */
@@ -122,7 +128,7 @@
 }
 
 .unfade-from-top {
-    animation: unfade-from-top 1s;
+    animation: unfade-from-top var(--mid-time);
 }
 
 
@@ -140,7 +146,7 @@
 }
 
 .unfade-from-right {
-    animation: unfade-from-right 1s;
+    animation: unfade-from-right var(--mid-time);
 }
 
 /* For Blog Panel */
@@ -157,7 +163,7 @@
 }
 
 .unfade-from-bottom {
-    animation: unfade-from-bottom 1s;
+    animation: unfade-from-bottom var(--mid-time);
 }
 
 
@@ -181,7 +187,7 @@
 }
 
 .slide-up {
-    animation: slide-up 1s ease-in-out;
+    animation: slide-up var(--mid-time) ease-in-out;
 }
 
 @keyframes slide-down {
@@ -195,7 +201,7 @@
 }
 
 .slide-down {
-    animation: slide-down 1s ease-in-out;
+    animation: slide-down var(--mid-time) ease-in-out;
 }
 
 @keyframes slide-down-hover {
@@ -207,7 +213,7 @@
 }
 
 .slide-down-hover {
-    animation: slide-down-hover 0.5s ease-in-out;
+    animation: slide-down-hover var(--short-time) ease-in-out;
 }
 
 @keyframes slide-up-hover {
@@ -219,7 +225,7 @@
 }
 
 .slide-up-hover {
-    animation: slide-up-hover 0.5s ease-in-out; 
+    animation: slide-up-hover var(--short-time) ease-in-out; 
 }
 
 /* FOR SMALL RESOLUTIONS */
@@ -233,7 +239,7 @@
 }
 
 .slide-left {
-    animation: slide-left 0.5s ease-in-out;
+    animation: slide-left var(--short-time) ease-in-out;
 }
 
 @keyframes slide-right {
@@ -247,7 +253,7 @@
 }
 
 .slide-right {
-    animation: slide-right 0.5s ease-in-out;
+    animation: slide-right var(--short-time) ease-in-out;
 }
 
 .home-pre-slide-left {
@@ -268,7 +274,7 @@
 }
 
 .slide-right-hover {
-    animation: slide-right-hover 0.5s ease-in-out;
+    animation: slide-right-hover var(--short-time) ease-in-out;
 }
 
 @keyframes slide-left-hover {
@@ -281,7 +287,7 @@
 }
 
 .slide-left-hover {
-    animation: slide-left-hover 0.5s ease-in-out;
+    animation: slide-left-hover var(--short-time) ease-in-out;
 }
 
 
@@ -303,7 +309,7 @@
 }
 
 .pop-up-slide {
-    animation: pop-up-slide 1s ease-in-out;
+    animation: pop-up-slide var(--mid-time) ease-in-out;
 }
 
 
