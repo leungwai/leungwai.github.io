@@ -856,62 +856,6 @@
 }
 
 
-/* Bottom Status Bar */
-.bottom-bar {
-    z-index: 100;
-    position: fixed;
-    height: 3.33svh; 
-    width: 100%;
-    margin: 0px;
-    bottom: 0px; 
-    padding-left:0px;
-    padding-right: 0px; 
-    background-color: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(15px);
-
-    transform: translateY(0%);
-    transition: transform 350ms ease-in;
-}
-
-.bottom-name {
-    float: left;
-    margin-left: 2.22svh; 
-    text-align: left;
-    font-size: 1.67svh; 
-    font-weight:bold;
-}
-
-.bottom-name i {
-    font-size: 1.4svh;
-    font-weight: 200;
-}
-
-.bottom-right {
-    display: flex;
-    justify-content: right;
-}
-
-.bottom-options {
-    margin-top: 0px;
-    margin-right: 2.22svh;
-    font-size: 1.67svh;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-@media (max-width: 991.98px) {
-    .bottom-right {
-        display: none;
-    }
-
-    .bottom-bar[data-visible="false"] {
-        transform: translateY(100%);
-    }
-}
-
-
 /*
 ADDITIONAL NOTES
 Based off on 1440x900 resolution
