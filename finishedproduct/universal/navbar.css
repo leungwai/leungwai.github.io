@@ -2,7 +2,7 @@
 .main-header-bar {
     z-index: 100;
     position: fixed;
-    height: 10vh; 
+    height: 10svh; 
     width: 100%;
     margin: 0px;
     padding-left:0px;
@@ -22,17 +22,17 @@
 
 .header-left #leungwai-logo {
     float: left;
-    height: 6.67vh; 
-    margin-left: 6.67vh;
-    margin-top: 1.67vh;
+    height: 6.67svh; 
+    margin-left: 6.67svh;
+    margin-top: 1.67svh;
 }
 
 .header-left #header-topic {
     float: left;
-    margin-top: 3.56vh; 
-    margin-left: 1.1vh; 
+    margin-top: 3.56svh; 
+    margin-left: 1.1svh; 
     text-align: center;
-    font-size: 2.22vh; 
+    font-size: 2.22svh; 
     font-weight: bold;
 }
 
@@ -43,10 +43,10 @@
 }
 
 .categories-center {
-    margin-left: 2.78vh;
-    margin-right: 2.78vh;
-    margin-top: 3.56vh;
-    font-size: 2.22vh;
+    margin-left: 2.78svh;
+    margin-right: 2.78svh;
+    margin-top: 3.56svh;
+    font-size: 2.22svh;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -59,9 +59,9 @@
 
 .categories-right {
     float: right;
-    margin-right: 6.67vh;
-    margin-top: 3.56vh;
-    font-size: 2.22vh;
+    margin-right: 6.67svh;
+    margin-top: 3.56svh;
+    font-size: 2.22svh;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -74,12 +74,12 @@
 }
 
 .categories-mobile {
-    font-size: 2.22vh;
+    font-size: 2.22svh;
     text-decoration: none;
     color: black;
     font-weight: bold;
     display: block;
-    padding: 2.78vh 10%;
+    padding: 2.78svh 10%;
 }
 
 /* Mobile Header - Bottom Options */
@@ -91,19 +91,19 @@
 
 .mobile-bottom-options {
     display: block;
-    font-size: 1.67vh;
+    font-size: 1.67svh;
     text-decoration: none;
     color: black;
     font-weight: bold;
-    padding: 1.1vh 10%;
+    padding: 1.1svh 10%;
 }
 
 .mobile-bottom-name {
     display: block;
     text-align: left;
-    font-size: 1.67vh; 
+    font-size: 1.67svh; 
     font-weight:bold;
-    padding: 1.1vh 10%;
+    padding: 1.1svh 10%;
 }
 
 .mobile-bottom-name i {
@@ -119,13 +119,13 @@
     background: none;
     border: none;
 
-    padding-top: 3.56vh;
-    padding-right: 6.67vh;
+    padding-top: 3.56svh;
+    padding-right: 6.67svh;
     padding-left: 0;
     padding-bottom: 0;
 
     text-decoration: none;
-    font-size: 2.22vh;
+    font-size: 2.22svh;
     
     color: black;
     font-weight: bold;
@@ -133,7 +133,7 @@
 
 @media (max-width: 575.98px) {
     .header-left #leungwai-logo {
-        margin-left: 3.34vh; 
+        margin-left: 3.34svh; 
     }
 
     .header-left #header-topic {
@@ -141,7 +141,7 @@
     }
 
     .menu-button {
-        padding-right: 3.34vh;
+        padding-right: 3.34svh;
     }
 
 }
@@ -162,9 +162,9 @@
         z-index: 1000;
         display: flex;
         position: fixed;
-        inset: 10vh 0 0 60vw;
+        inset: 10svh 0 0 60vw;
         flex-direction: column;
-        padding-top: 5vh; 
+        padding-top: 5svh; 
         background-color: rgba(255, 255, 255, 0.75);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
@@ -181,12 +181,12 @@
 
 @media (max-width: 767.98px) {
     .mobile-header-bar {
-        inset: 10vh 0 0 50vw;
+        inset: 10svh 0 0 50vw;
     }
 }
 
 @media (max-width: 575.98px) {
     .mobile-header-bar {
-        inset: 10vh 0 0 30vw;
+        inset: 10svh 0 0 30vw;
     }
 }
