@@ -107,7 +107,8 @@
 }
 
 .mobile-bottom-name i {
-    font-weight: lighter;
+    font-size: 1.4svh;
+    font-weight: 200;
 }
 
 /* Mobile-Header - Menu Button */
