@@ -1,17 +1,3 @@
-*{
-    font-family: "Helvetica Neue", "Inter", sans-serif;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-:root {
-    --short-time: 0.7s;
-    --mid-time: 1.2s;
-    --long-time: 1.5s;
-}
-
 /* Initial Page Load Status Bar */
 .initial-page-load-status-bar {
     z-index: 300;

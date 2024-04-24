@@ -1,10 +1,4 @@
 /* All Panels - Gradient Background Animation */
-:root {
-    --short-time: 0.7s;
-    --mid-time: 1.2s;
-    --long-time: 1.5s;
-}
-
 @keyframes color {
     0% {
         background-position: 0% 50%;

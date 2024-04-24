@@ -1,21 +1,3 @@
-*{
-    font-family: "Helvetica Neue", "Inter", sans-serif
-}
-
-:root {
-    --fs-small: 1.25rem; 
-    --fs-medium: 1.5625rem;
-    --fs-large: 2.5rem; 
-}
-
-@media(max-width: 575.98px) {
-    :root {
-        --fs-small: 0.9375rem; 
-        --fs-medium: 1.25rem;
-        --fs-large: 2.1875rem; 
-    }   
-}
-
 .blur {
     z-index: 200;
     position: fixed;
@@ -30,15 +12,27 @@
 
 
 /* Main Home Panel (left side of page) */
+.content {
+    position: absolute;
+    height: 100vh;
+    height: 100svh;
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
 .home-panel {
     margin: 0px;
-    height: 100%;
+    height: 100vh;
+    height: 100svh;
+    padding: 1.1vh;
+    padding: 1.1svh;
 }
 
 .home-panel-box {
     margin: 0;
     height: 100%;
-    width:100%;
+    width: 100%;
 
     border-radius: 2.78vh;
     border-radius: 2.78svh;
@@ -48,7 +42,6 @@
     background: linear-gradient(150deg, #c6f5ff, #fdffaf);
     background-size: 300% 300%;
     animation: color 5s ease-in-out infinite;
-
 }
 
 @keyframes color {
@@ -74,6 +67,12 @@
     box-shadow: 0px 1.1vh 2.22vh 1.1vh rgba(225,225,225,0.5);
 }
 
+@media (max-width: 1199.98px) {
+    .coming-soon-box {
+        height: fit-content;
+    }
+}
+
 .coming-soon-box-contents {
     height: 100%;
     width: 100%;
@@ -82,17 +81,17 @@
 }
 
 .coming-soon-left-side {
-    padding: 2.78vh;
+    padding: 2.78svh;
+    padding: 2.78svh;
 }
 
 .coming-soon-logo {
     margin: auto;
-    padding: 0px;
-    width: 22.22vh;
+    padding: 0;
     width: 22.22svh;
+    width: 22.22vh;
     box-shadow: 0px 1.1vh 2.22vh rgba(134,134,134,0.25);
-    border-radius: 11.11vh;
-    border-radius: 11.11svh;
+    border-radius: 50%;
 }
 
 .coming-soon-right-side {
@@ -102,8 +101,9 @@
 
 @media(max-width: 1199.98px) {
     .coming-soon-left-side {
-        height: 50%;
-        padding: 15%;
+        height: 25vh;
+        height: 25svh;
+        padding: 10%;
         padding-bottom: 0;
     }
 
@@ -114,7 +114,7 @@
     }
     .coming-soon-right-side {
         height: 50%;
-        padding: 15%;
+        padding: 10%;
     }
 }
 
@@ -147,12 +147,6 @@
     text-decoration: underline;
 }
 
-.content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0.972vh;
-}
+
 
 

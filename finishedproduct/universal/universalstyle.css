@@ -1,0 +1,29 @@
+*{
+    font-family: "Helvetica Neue", "Inter", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --fs-extrasmall: 0.9375rem; /* 15px */ 
+    --fs-small: 1.25rem; /* 20px */
+    --fs-medium: 1.5625rem; /* 25px */ 
+    --fs-large: 2.5rem; /* 40px */ 
+}
+
+@media(max-width: 575.98px) {
+    :root {
+        --fs-extrasmall: 0.625rem; /* 10px */ 
+        --fs-small: 0.9375rem; /* 15px */
+        --fs-medium: 1.25rem; /* 20px */ 
+        --fs-large: 2.1875rem; /* 35px */ 
+    }   
+}
+
+:root {
+    --short-time: 0.7s;
+    --mid-time: 1.2s;
+    --long-time: 1.5s;
+}
