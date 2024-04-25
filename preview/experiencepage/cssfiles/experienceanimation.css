@@ -1,0 +1,327 @@
+/* All Panels - Gradient Background Animation */
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hidden {
+    opacity: 0; 
+}
+
+.supports-hidden {
+    transition: opacity var(--short-time);
+}
+
+.display-none {
+    display: none;
+}
+
+
+
+/* Initial Panel Slide-In */
+/* For Home Panel: */
+
+@keyframes fade-from-left {
+    0% {
+        opacity: 0%;
+        transform: translateX(-300px) scale(0.9);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateX(0px) scale(1);
+    }
+}
+
+.fade-from-left {
+    animation: fade-from-left var(--long-time);
+}
+
+/* For About Panel: */
+@keyframes fade-from-top {
+    0% {
+        opacity: 0%;
+        transform: translateY(-300px) scale(0.9);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.fade-from-top {
+    animation: fade-from-top var(--long-time);
+}
+
+
+/* For Experience Panel: */
+@keyframes fade-from-right {
+    0% {
+        opacity: 0%;
+        transform: translateX(300px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+}
+
+.fade-from-right {
+    animation: fade-from-right var(--long-time);
+}
+
+/* For Blog Panel */
+@keyframes fade-from-bottom {
+    0% {
+        opacity: 0%;
+        transform: translateY(300px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.fade-from-bottom {
+    animation: fade-from-bottom var(--long-time);
+}
+
+
+/* UNFADE ANIMATION */
+@keyframes unfade-from-left {
+    0% {
+        opacity: 100%;
+        transform: translateX(0px) scale(1);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateX(-300px) scale(0.9);
+    }
+}
+
+.unfade-from-left {
+    animation: unfade-from-left var(--mid-time);
+}
+
+/* For About Panel: */
+@keyframes unfade-from-top {
+    0% {
+        opacity: 100%;
+        transform: translateY(0px) scale(1);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateY(-300px) scale(0.9);
+    }
+}
+
+.unfade-from-top {
+    animation: unfade-from-top var(--mid-time);
+}
+
+
+/* For Experience Panel: */
+@keyframes unfade-from-right {
+    0% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateX(300px) scale(0.9);
+    }
+    
+}
+
+.unfade-from-right {
+    animation: unfade-from-right var(--mid-time);
+}
+
+/* For Blog Panel */
+@keyframes unfade-from-bottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateY(300px) scale(0.9);
+    }
+    
+}
+
+.unfade-from-bottom {
+    animation: unfade-from-bottom var(--mid-time);
+}
+
+
+/* Home Panel */
+@keyframes slide-up {
+    0% {
+        transform: translateY(40%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
+.home-pre-slide-up {
+    transform: translateY(40%);
+}
+
+.home-pre-slide-down {
+    transform: translateY(-40%);
+}
+
+.slide-up {
+    animation: slide-up var(--mid-time) ease-in-out;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-40%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
+.slide-down {
+    animation: slide-down var(--mid-time) ease-in-out;
+}
+
+@keyframes slide-down-hover {
+    0% {
+        transform: translateY(0%);
+    } 100% {
+        transform: translateY(40%);
+    }
+}
+
+.slide-down-hover {
+    animation: slide-down-hover var(--short-time) ease-in-out;
+}
+
+@keyframes slide-up-hover {
+    0% {
+        transform: translateY(0%);
+    } 100% {
+        transform: translateY(-40%);
+    }
+}
+
+.slide-up-hover {
+    animation: slide-up-hover var(--short-time) ease-in-out; 
+}
+
+/* FOR SMALL RESOLUTIONS */
+@keyframes slide-left {
+    0% {
+        transform: translateX(45%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.slide-left {
+    animation: slide-left var(--short-time) ease-in-out;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-45%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+
+}
+
+.slide-right {
+    animation: slide-right var(--short-time) ease-in-out;
+}
+
+.home-pre-slide-left {
+    transform: translateX(45%);
+}
+
+.home-pre-slide-right {
+    transform: translateX(-45%);
+}
+
+@keyframes slide-right-hover {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(45%);
+    }
+}
+
+.slide-right-hover {
+    animation: slide-right-hover var(--short-time) ease-in-out;
+}
+
+@keyframes slide-left-hover {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-45%);
+    }
+}
+
+.slide-left-hover {
+    animation: slide-left-hover var(--short-time) ease-in-out;
+}
+
+
+
+@keyframes pop-up-slide {
+    0% {
+        transform: translateY(100%);
+    }
+    75% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.pre-pop-up-slide {
+    transform: translateY(100%);
+}
+
+.pop-up-slide {
+    animation: pop-up-slide var(--mid-time) ease-in-out;
+}
+
+
+
+
+/* Experience Panel */
+
+/* Experience Panel - Image Carousel */
+@keyframes logo-slide {
+    from {
+        transform: translateX(0%);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Blog Panel */
+
+
+

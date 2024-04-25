@@ -125,7 +125,7 @@
     border-radius: 2.78svh;
 
     box-shadow: 0px 0.56svh 1.1svh 0.56svh rgba(225,225,225,0.5);
-    background: linear-gradient(135deg, #fffef4, #fff880);
+    background: linear-gradient(135deg, #f7f3ff, #ac7dff);
     background-size: 300%;
     animation: color 5s ease-in-out infinite; 
 }
