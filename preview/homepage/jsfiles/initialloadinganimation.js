@@ -175,6 +175,7 @@ setTimeout(() => {
 
     initialPageLoadStatus.classList.add("supports-hidden");
     navBar.classList.add("supports-hidden");
+    statusBar.classList.add("supports-hidden");
 }, 300);
 
 

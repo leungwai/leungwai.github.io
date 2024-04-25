@@ -158,7 +158,7 @@ setTimeout(() => {
     blogLearnMoreButton.classList.add("supports-hidden");
     blogExcerpt.classList.add("supports-hidden");
 
-    // navBar.classList.add("supports-hidden");
+    statusBar.classList.add("supports-hidden");
 }, 300);
 
 
